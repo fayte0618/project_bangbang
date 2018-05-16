@@ -7,7 +7,6 @@ public class LifespanSystem : IExecuteSystem
 {
     private readonly MetaContext _meta;
     private readonly IGroup<GameEntity> _lifespan;
-    private List<GameEntity> _buffer = new List<GameEntity>();
 
     public LifespanSystem (Contexts contexts)
     {
@@ -17,7 +16,7 @@ public class LifespanSystem : IExecuteSystem
 
     public void Execute ()
     {
-        foreach (var e in _lifespan.GetEntities(_buffer))
+        foreach (var e in _lifespan)
         {
             e.ReplaceLifespan(e.lifespan.remaining - _meta.timeService.current.Delta);
 

@@ -8,8 +8,6 @@ public class AutoMoveSystem : IExecuteSystem
     private readonly MetaContext _meta;
     private readonly IGroup<GameEntity> _movers;
 
-    private List<GameEntity> _buffer = new List<GameEntity>();
-
     public AutoMoveSystem (Contexts contexts)
     {
         _meta = contexts.meta;
@@ -20,7 +18,7 @@ public class AutoMoveSystem : IExecuteSystem
     public void Execute ()
     {
         //calculate movement
-        foreach (var move in _movers.GetEntities(_buffer))
+        foreach (var move in _movers)
         {
             var moveSpd = (move.direction.current * move.speed.current) * _meta.timeService.current.Delta;
             move.ReplacePosition((Vector2)move.position.current + moveSpd);

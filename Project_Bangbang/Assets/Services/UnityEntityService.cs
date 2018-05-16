@@ -29,7 +29,7 @@ public class UnityEntityService : MonoBehaviour, IEntityService
     {
         if (_isInit) { return; }
 
-        var objs = Resources.LoadAll<UnityEntityTemplate>(_baseFolder);
+        var objs = Resources.LoadAll<UnityEntityTemplate>(_baseFolder).Select(obj => GameObject.Instantiate(obj));
         var sceneObjs = SceneManager.GetActiveScene().GetRootGameObjects()
                         .Select(obj => obj.GetComponentInChildren<UnityEntityTemplate>())
                         .Where(temp => temp != null).ToList();

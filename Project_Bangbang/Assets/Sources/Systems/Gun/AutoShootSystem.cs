@@ -35,7 +35,11 @@ public class AutoShootSystem : ReactiveSystem<GameEntity>
             e.isShoot = true;
             IEntity bullet;
             _meta.entityService.current.Get(e.bullet.entityID, out bullet);
-            ((GameEntity)bullet).ReplacePosition(e.position.current);
+            if (bullet != null)
+            {
+                ((GameEntity)bullet).ReplacePosition(e.position.current);
+            }
+
             e.ReplaceCooldown(e.gun.fireRate);
         }
     }
