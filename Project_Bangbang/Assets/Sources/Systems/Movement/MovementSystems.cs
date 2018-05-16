@@ -9,5 +9,6 @@ public class MovementSystems : Feature
     {
         //Add(system here);
         Add(new MoveFromTouchSystem(contexts));
+        Add(new AutoMoveSystem(contexts));
     }
 }

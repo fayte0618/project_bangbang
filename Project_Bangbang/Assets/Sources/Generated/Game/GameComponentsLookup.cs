@@ -8,20 +8,36 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int MoveFromTouch = 0;
-    public const int Position = 1;
-    public const int PositionListener = 2;
-    public const int Speed = 3;
-    public const int ToDestroy = 4;
-    public const int ToDestroyListener = 5;
-    public const int View = 6;
+    public const int AutoMove = 0;
+    public const int Bullet = 1;
+    public const int Cooldown = 2;
+    public const int Direction = 3;
+    public const int Gun = 4;
+    public const int ID = 5;
+    public const int Lifespan = 6;
+    public const int MoveFromTouch = 7;
+    public const int Position = 8;
+    public const int PositionListener = 9;
+    public const int Shoot = 10;
+    public const int Speed = 11;
+    public const int ToDestroy = 12;
+    public const int ToDestroyListener = 13;
+    public const int View = 14;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
+        "AutoMove",
+        "Bullet",
+        "Cooldown",
+        "Direction",
+        "Gun",
+        "ID",
+        "Lifespan",
         "MoveFromTouch",
         "Position",
         "PositionListener",
+        "Shoot",
         "Speed",
         "ToDestroy",
         "ToDestroyListener",
@@ -29,9 +45,17 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AutoMoveComponent),
+        typeof(BulletComponent),
+        typeof(CooldownComponent),
+        typeof(DirectionComponent),
+        typeof(GunComponent),
+        typeof(IDComponent),
+        typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(ShootComponent),
         typeof(SpeedComponent),
         typeof(ToDestroyComponent),
         typeof(ToDestroyListenerComponent),

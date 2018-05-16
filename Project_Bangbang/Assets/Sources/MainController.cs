@@ -30,11 +30,14 @@ public class MainController : MonoBehaviour
     private Systems CreateSystems (Contexts contexts, Services services)
     {
         return new Feature("Overall Systems")
+            .Add(new IDInitializeSystem(contexts))
             .Add(new ServiceSystems(contexts, services))
             .Add(new CreateEntityInputSystem(contexts))
 
             .Add(new InputTouchActionExecuteSystem(contexts))
 
+            .Add(new GunSystems(contexts))
+            .Add(new BulletSystems(contexts))
             .Add(new MovementSystems(contexts))
 
             .Add(new GameEventSystems(contexts))

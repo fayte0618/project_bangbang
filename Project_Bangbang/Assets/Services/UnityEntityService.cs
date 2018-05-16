@@ -74,6 +74,7 @@ public class UnityEntityService : MonoBehaviour, IEntityService
             return true;
         }
 
+        Debug.LogWarning($"{name} entity template does not exist");
         return false;
     }
 

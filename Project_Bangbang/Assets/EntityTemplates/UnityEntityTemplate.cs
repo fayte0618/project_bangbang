@@ -4,6 +4,7 @@ using Entitas;
 
 public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
 {
+    [Header("Entity Settings")]
     [SerializeField]
     string _entityName;
 
@@ -23,7 +24,7 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
     {
         var views = this.gameObject.GetComponentsInChildren<IView>(true);
 
-        if (views != null)
+        if (views != null && views.Length > 0)
         {
             string[] current = new string[views.Length];
             for (int i = 0; i < views.Length; i++)
