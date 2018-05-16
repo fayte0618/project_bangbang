@@ -24,6 +24,8 @@ public class BulletTemplate : UnityEntityTemplate
         ety.isAutoMove = true;
         ety.AddPosition(initPos);
         ety.AddLifespan(lifespan);
+        ety.AddDamage(damage);
+        ety.AddBullet(this.Name);
 
         return ety;
     }

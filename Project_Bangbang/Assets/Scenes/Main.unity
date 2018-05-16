@@ -286,6 +286,7 @@ MonoBehaviour:
   _createOnStart: 1
   entities:
   - Player
+  - Enemy
 --- !u!4 &590147186
 Transform:
   m_ObjectHideFlags: 0

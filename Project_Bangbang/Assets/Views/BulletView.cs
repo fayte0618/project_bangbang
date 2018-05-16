@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
 
-public class TestView : UnityView, IPositionListener
+public class BulletView : UnityView, IPositionListener
 {
     public void OnPosition (GameEntity entity, Vector3 current)
     {

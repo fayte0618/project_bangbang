@@ -9,19 +9,22 @@
 public static class InputComponentsLookup {
 
     public const int CreateEntity = 0;
-    public const int InputNewPosition = 1;
-    public const int InputTouchData = 2;
+    public const int InputCollision = 1;
+    public const int InputNewPosition = 2;
+    public const int InputTouchData = 3;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
         "CreateEntity",
+        "InputCollision",
         "InputNewPosition",
         "InputTouchData"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(CreateEntityComponent),
+        typeof(InputCollisionComponent),
         typeof(InputNewPositionComponent),
         typeof(InputTouchDataComponent)
     };

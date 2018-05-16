@@ -9,5 +9,6 @@ public class BulletSystems : Feature
     {
         //Add(system here);
         Add(new LifespanSystem(contexts));
+        Add(new OnCollisionBulletDestroySystem(contexts));
     }
 }

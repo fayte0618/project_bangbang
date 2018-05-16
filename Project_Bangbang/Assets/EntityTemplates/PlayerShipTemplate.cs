@@ -9,9 +9,13 @@ public class PlayerShipTemplate : UnityEntityTemplate
     private float _speed;
     [Header("Gun Settings")]
     [SerializeField]
+    private int health;
+    [SerializeField]
     private string gunEntity;
     [SerializeField]
     private int numGuns = 5;
+    [SerializeField, Tag]
+    private string tag;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
@@ -25,11 +29,17 @@ public class PlayerShipTemplate : UnityEntityTemplate
         {
             IEntity entity;
             contexts.meta.entityService.current.Get(gunEntity, out entity);
+            var gun = (GameEntity)entity;
+            slots.Add(i, gun.iD.number);
 
-            slots.Add(i, ((GameEntity)entity).iD.number);
+            gun.AddTag(tag);
         }
 
         gameety.AddGunSlots(slots);
+        gameety.AddCollision(new Dictionary<int, CollisionType>());
+
+        gameety.AddHealth(health);
+        gameety.AddTag(tag);
 
         return gameety;
     }

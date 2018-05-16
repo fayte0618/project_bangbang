@@ -10,31 +10,40 @@ public static class GameComponentsLookup {
 
     public const int AutoMove = 0;
     public const int Bullet = 1;
-    public const int Cooldown = 2;
-    public const int Direction = 3;
-    public const int Gun = 4;
-    public const int GunSlots = 5;
-    public const int ID = 6;
-    public const int Lifespan = 7;
-    public const int MoveFromTouch = 8;
-    public const int Position = 9;
-    public const int PositionListener = 10;
-    public const int Shoot = 11;
-    public const int ShootListener = 12;
-    public const int Speed = 13;
-    public const int ToDestroy = 14;
-    public const int ToDestroyListener = 15;
-    public const int View = 16;
+    public const int Collision = 2;
+    public const int Cooldown = 3;
+    public const int Damage = 4;
+    public const int Direction = 5;
+    public const int Gun = 6;
+    public const int GunSlots = 7;
+    public const int Health = 8;
+    public const int HealthListener = 9;
+    public const int ID = 10;
+    public const int Lifespan = 11;
+    public const int MoveFromTouch = 12;
+    public const int Position = 13;
+    public const int PositionListener = 14;
+    public const int Shoot = 15;
+    public const int ShootListener = 16;
+    public const int Speed = 17;
+    public const int Tag = 18;
+    public const int ToDestroy = 19;
+    public const int ToDestroyListener = 20;
+    public const int View = 21;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 22;
 
     public static readonly string[] componentNames = {
         "AutoMove",
         "Bullet",
+        "Collision",
         "Cooldown",
+        "Damage",
         "Direction",
         "Gun",
         "GunSlots",
+        "Health",
+        "HealthListener",
         "ID",
         "Lifespan",
         "MoveFromTouch",
@@ -43,6 +52,7 @@ public static class GameComponentsLookup {
         "Shoot",
         "ShootListener",
         "Speed",
+        "Tag",
         "ToDestroy",
         "ToDestroyListener",
         "View"
@@ -51,10 +61,14 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AutoMoveComponent),
         typeof(BulletComponent),
+        typeof(CollisionComponent),
         typeof(CooldownComponent),
+        typeof(DamageComponent),
         typeof(DirectionComponent),
         typeof(GunComponent),
         typeof(GunSlotsComponent),
+        typeof(HealthComponent),
+        typeof(HealthListenerComponent),
         typeof(IDComponent),
         typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
@@ -63,6 +77,7 @@ public static class GameComponentsLookup {
         typeof(ShootComponent),
         typeof(ShootListenerComponent),
         typeof(SpeedComponent),
+        typeof(TagComponent),
         typeof(ToDestroyComponent),
         typeof(ToDestroyListenerComponent),
         typeof(ViewComponent)

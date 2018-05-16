@@ -11,6 +11,10 @@ public abstract class UnityView : MonoBehaviour, IView, IToDestroyListener
 
     UnityEntityTemplate _template;
 
+    public Contexts Contexts { get { return contexts; } }
+
+    public int ID { get { return entity.iD.number; } }
+
     public string Name { get { return this.gameObject.name; } }
 
     public void Link (Contexts contexts, GameEntity entity, IEntityTemplate template)

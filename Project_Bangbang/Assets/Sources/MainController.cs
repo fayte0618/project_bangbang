@@ -37,8 +37,10 @@ public class MainController : MonoBehaviour
             .Add(new InputTouchActionExecuteSystem(contexts))
 
             .Add(new GunSystems(contexts))
-            .Add(new BulletSystems(contexts))
             .Add(new MovementSystems(contexts))
+            .Add(new CollisionSystems(contexts))
+            .Add(new BulletSystems(contexts))
+            .Add(new DamageSystems(contexts))
 
             .Add(new GameEventSystems(contexts))
             .Add(new DestroySystem(contexts));

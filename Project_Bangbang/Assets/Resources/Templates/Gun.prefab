@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityName: Gun
   _bulletEntityID: Bullet
-  _fireRate: 0.1
+  _fireRate: 0.5
   _initPos: {x: 0, y: 0}
 --- !u!114 &114386629088035586
 MonoBehaviour:
