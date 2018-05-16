@@ -9,6 +9,7 @@ public class DamageSystems : Feature
     {
         //Add(system here);
         Add(new DamageCollisionSystem(contexts));
+        Add(new DeathSystem(contexts));
 
     }
 }

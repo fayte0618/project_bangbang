@@ -13,25 +13,27 @@ public static class GameComponentsLookup {
     public const int Collision = 2;
     public const int Cooldown = 3;
     public const int Damage = 4;
-    public const int Direction = 5;
-    public const int Gun = 6;
-    public const int GunSlots = 7;
-    public const int Health = 8;
-    public const int HealthListener = 9;
-    public const int ID = 10;
-    public const int Lifespan = 11;
-    public const int MoveFromTouch = 12;
-    public const int Position = 13;
-    public const int PositionListener = 14;
-    public const int Shoot = 15;
-    public const int ShootListener = 16;
-    public const int Speed = 17;
-    public const int Tag = 18;
-    public const int ToDestroy = 19;
-    public const int ToDestroyListener = 20;
-    public const int View = 21;
+    public const int Dead = 5;
+    public const int DeadListener = 6;
+    public const int Direction = 7;
+    public const int Gun = 8;
+    public const int GunSlots = 9;
+    public const int Health = 10;
+    public const int HealthListener = 11;
+    public const int ID = 12;
+    public const int Lifespan = 13;
+    public const int MoveFromTouch = 14;
+    public const int Position = 15;
+    public const int PositionListener = 16;
+    public const int Shoot = 17;
+    public const int ShootListener = 18;
+    public const int Speed = 19;
+    public const int Tag = 20;
+    public const int ToDestroy = 21;
+    public const int ToDestroyListener = 22;
+    public const int View = 23;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -39,6 +41,8 @@ public static class GameComponentsLookup {
         "Collision",
         "Cooldown",
         "Damage",
+        "Dead",
+        "DeadListener",
         "Direction",
         "Gun",
         "GunSlots",
@@ -64,6 +68,8 @@ public static class GameComponentsLookup {
         typeof(CollisionComponent),
         typeof(CooldownComponent),
         typeof(DamageComponent),
+        typeof(DeadComponent),
+        typeof(DeadListenerComponent),
         typeof(DirectionComponent),
         typeof(GunComponent),
         typeof(GunSlotsComponent),
