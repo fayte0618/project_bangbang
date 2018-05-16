@@ -6,20 +6,27 @@ using Entitas;
 public class DestroySystem : ICleanupSystem
 {
     private readonly IGroup<GameEntity> _toDestroy;
+    private InputContext _input;
 
-    private List<GameEntity> _buffer = new List<GameEntity>();
+    private List<GameEntity> _destroyBuffer = new List<GameEntity>();
 
     public DestroySystem (Contexts contexts)
     {
-        _toDestroy = contexts.game.GetGroup(GameMatcher.Destroy);
+        _input = contexts.input;
+        _toDestroy = contexts.game.GetGroup(GameMatcher.ToDestroy);
     }
 
     public void Cleanup ()
     {
-        foreach (var dty in _toDestroy.GetEntities(_buffer))
+        foreach (var dty in _toDestroy.GetEntities(_destroyBuffer))
         {
-            if (dty.destroy.delay > 0) { dty.ReplaceDestroy(dty.destroy.delay - 1); }
+            if (dty.toDestroy.delay > 0) { dty.ReplaceToDestroy(dty.toDestroy.delay - 1); }
             else { dty.Destroy(); }
+        }
+
+        foreach (var ety in _input.GetEntities())
+        {
+            ety.Destroy();
         }
     }
 }

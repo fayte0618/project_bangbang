@@ -35,5 +35,9 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
 
             entity.AddView(current);
         }
+        else
+        {
+            UnityEntityService.Instance.Return(this);
+        }
     }
 }

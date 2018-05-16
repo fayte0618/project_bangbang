@@ -2,7 +2,7 @@
 using System.Collections;
 using Entitas.Unity;
 
-public abstract class UnityView : MonoBehaviour, IView, IDestroyListener
+public abstract class UnityView : MonoBehaviour, IView, IToDestroyListener
 {
     protected Contexts contexts;
     protected GameEntity entity;
@@ -26,13 +26,18 @@ public abstract class UnityView : MonoBehaviour, IView, IDestroyListener
 
         Initialize(contexts, entity);
         RegisterListeners(entity);
+        entity.AddToDestroyListener(this);
     }
 
-    public void OnDestroy (GameEntity entity, uint delay)
+    public void OnToDestroy (GameEntity entity, uint delay)
     {
         if (delay == 0)
         {
             UnregisterListeners(entity);
+            //entity.RemoveToDestroyListener(this);
+
+            link.Unlink();
+
             if (_template.gameObject.activeSelf)
             {
                 UnityEntityService.Instance.Return(_template);

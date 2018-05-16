@@ -6,17 +6,17 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public static class InputComponentsLookup {
+public static class MetaComponentsLookup {
 
-    public const int CreateEntity = 0;
+    public const int EntityService = 0;
 
     public const int TotalComponents = 1;
 
     public static readonly string[] componentNames = {
-        "CreateEntity"
+        "EntityService"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(CreateEntityComponent)
+        typeof(EntityServiceComponent)
     };
 }
