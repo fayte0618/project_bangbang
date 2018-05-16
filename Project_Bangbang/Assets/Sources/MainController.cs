@@ -32,6 +32,11 @@ public class MainController : MonoBehaviour
         return new Feature("Overall Systems")
             .Add(new ServiceSystems(contexts, services))
             .Add(new CreateEntityInputSystem(contexts))
+
+            .Add(new InputTouchActionExecuteSystem(contexts))
+
+            .Add(new MovementSystems(contexts))
+
             .Add(new GameEventSystems(contexts))
             .Add(new DestroySystem(contexts));
     }
@@ -43,7 +48,8 @@ public class MainController : MonoBehaviour
 
         return new Services()
         {
-            entity = entityService
+            entity = entityService,
+            input = GetComponentInChildren<UnityInputService>()
         };
     }
 }

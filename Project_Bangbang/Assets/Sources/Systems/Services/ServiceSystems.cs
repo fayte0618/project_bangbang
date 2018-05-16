@@ -9,5 +9,6 @@ public class ServiceSystems : Feature
     {
         //Add(system here);
         Add(new EntityServiceInitSystem(contexts, services.entity));
+        Add(new InputServiceInitSystem(contexts, services.input));
     }
 }
