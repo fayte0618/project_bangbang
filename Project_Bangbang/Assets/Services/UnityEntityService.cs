@@ -45,11 +45,15 @@ public class UnityEntityService : MonoBehaviour, IEntityService
 
     private void SceneManager_activeSceneChanged (Scene arg0, Scene arg1)
     {
-        var sceneObjs = SceneManager.GetActiveScene().GetRootGameObjects()
+        if (arg0.name != null)
+        {
+            var sceneObjs = SceneManager.GetActiveScene().GetRootGameObjects()
                         .Select(obj => obj.GetComponentInChildren<UnityEntityTemplate>())
                         .Where(temp => temp != null);
 
-        foreach (var obj in sceneObjs) { AddToPool(obj); }
+            foreach (var obj in sceneObjs) { AddToPool(obj); }
+        }
+
     }
 
     public bool Get (string name)
@@ -83,7 +87,10 @@ public class UnityEntityService : MonoBehaviour, IEntityService
         ObjectPool<UnityEntityTemplate> pool;
         if (_masterPool.TryGetValue(template.Name, out pool))
         {
-            pool.Return(template);
+            if (template.gameObject.activeInHierarchy)
+            {
+                pool.Return(template);
+            }
         }
         else
         {
