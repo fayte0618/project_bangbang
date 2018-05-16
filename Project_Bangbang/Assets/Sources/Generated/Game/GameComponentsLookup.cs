@@ -13,18 +13,20 @@ public static class GameComponentsLookup {
     public const int Cooldown = 2;
     public const int Direction = 3;
     public const int Gun = 4;
-    public const int ID = 5;
-    public const int Lifespan = 6;
-    public const int MoveFromTouch = 7;
-    public const int Position = 8;
-    public const int PositionListener = 9;
-    public const int Shoot = 10;
-    public const int Speed = 11;
-    public const int ToDestroy = 12;
-    public const int ToDestroyListener = 13;
-    public const int View = 14;
+    public const int GunSlots = 5;
+    public const int ID = 6;
+    public const int Lifespan = 7;
+    public const int MoveFromTouch = 8;
+    public const int Position = 9;
+    public const int PositionListener = 10;
+    public const int Shoot = 11;
+    public const int ShootListener = 12;
+    public const int Speed = 13;
+    public const int ToDestroy = 14;
+    public const int ToDestroyListener = 15;
+    public const int View = 16;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -32,12 +34,14 @@ public static class GameComponentsLookup {
         "Cooldown",
         "Direction",
         "Gun",
+        "GunSlots",
         "ID",
         "Lifespan",
         "MoveFromTouch",
         "Position",
         "PositionListener",
         "Shoot",
+        "ShootListener",
         "Speed",
         "ToDestroy",
         "ToDestroyListener",
@@ -50,12 +54,14 @@ public static class GameComponentsLookup {
         typeof(CooldownComponent),
         typeof(DirectionComponent),
         typeof(GunComponent),
+        typeof(GunSlotsComponent),
         typeof(IDComponent),
         typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
         typeof(ShootComponent),
+        typeof(ShootListenerComponent),
         typeof(SpeedComponent),
         typeof(ToDestroyComponent),
         typeof(ToDestroyListenerComponent),

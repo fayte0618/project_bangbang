@@ -8,6 +8,8 @@ public class GunTemplate : UnityEntityTemplate
     private string _bulletEntityID;
     [SerializeField]
     private float _fireRate;
+    [SerializeField]
+    private Vector2 _initPos;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
@@ -15,6 +17,7 @@ public class GunTemplate : UnityEntityTemplate
         ety.AddGun(_fireRate);
         ety.AddCooldown(0f);
         ety.AddBullet(_bulletEntityID);
+        ety.AddPosition(_initPos);
 
         return ety;
     }

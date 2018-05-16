@@ -24,6 +24,7 @@ public class AutoShootSystem : ReactiveSystem<GameEntity>
         return entity.hasCooldown &&
             entity.cooldown.current <= 0f &&
             entity.hasGun && entity.hasBullet &&
+            entity.hasPosition &&
             entity.isShoot == false;
     }
 
@@ -32,7 +33,9 @@ public class AutoShootSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             e.isShoot = true;
-            _meta.entityService.current.Get(e.bullet.entityID);
+            IEntity bullet;
+            _meta.entityService.current.Get(e.bullet.entityID, out bullet);
+            ((GameEntity)bullet).ReplacePosition(e.position.current);
             e.ReplaceCooldown(e.gun.fireRate);
         }
     }

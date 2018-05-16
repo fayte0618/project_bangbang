@@ -4,9 +4,9 @@ using UnityEngine;
 using Entitas;
 
 //[Entitas.CodeGenerator.SingleEntity]
-[Game]
-public sealed class GunComponent : IComponent
+[Input]
+public sealed class InputNewPositionComponent : IComponent
 {
-    public float fireRate;
-
+    public int targetID;
+    public Vector3 newValue;
 }
