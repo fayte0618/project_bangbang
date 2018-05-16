@@ -49,7 +49,9 @@ public class MainController : MonoBehaviour
         return new Services()
         {
             entity = entityService,
-            input = GetComponentInChildren<UnityInputService>()
+            input = GetComponentInChildren<UnityInputService>(),
+            screen = GetComponentInChildren<UnityScreenService>(),
+            time = GetComponentInChildren<UnityTimeService>()
         };
     }
 }

@@ -10,16 +10,22 @@ public static class MetaComponentsLookup {
 
     public const int EntityService = 0;
     public const int InputService = 1;
+    public const int ScreenService = 2;
+    public const int TimeService = 3;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
         "EntityService",
-        "InputService"
+        "InputService",
+        "ScreenService",
+        "TimeService"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(EntityServiceComponent),
-        typeof(InputServiceComponent)
+        typeof(InputServiceComponent),
+        typeof(ScreenServiceComponent),
+        typeof(TimeServiceComponent)
     };
 }

@@ -6,10 +6,12 @@ using Entitas;
 public class MoveFromTouchSystem : ReactiveSystem<InputEntity>
 {
     private IGroup<GameEntity> _moveables;
+    private readonly MetaContext _meta;
 
     public MoveFromTouchSystem (Contexts contexts) : base(contexts.input)
     {
-        _moveables = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Position));
+        _meta = contexts.meta;
+        _moveables = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Position, GameMatcher.Speed, GameMatcher.MoveFromTouch));
     }
 
     protected override ICollector<InputEntity> GetTrigger (IContext<InputEntity> context)
@@ -31,7 +33,10 @@ public class MoveFromTouchSystem : ReactiveSystem<InputEntity>
             // do stuff to the matched entities
             foreach (var move in _moveables)
             {
-                move.ReplacePosition((Vector2)move.position.current + e.inputTouchData.delta);
+                var movement = (e.inputTouchData.delta * move.speed.current) * _meta.timeService.current.Delta;
+                var newPos = ((Vector2)move.position.current + movement);
+                newPos = _meta.screenService.current.ConstrainToNearest(newPos);
+                move.ReplacePosition(newPos);
             }
         }
     }

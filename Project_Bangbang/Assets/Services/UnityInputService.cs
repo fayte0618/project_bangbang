@@ -11,6 +11,8 @@ public class UnityInputService : MonoBehaviour, IInputService
     private Vector2 _prevPos = Vector2.zero;
     private Vector2 _currPos = Vector2.zero;
 
+    private bool _initTouch = false;
+
     public Vector2 Delta
     {
         get { return _delta; }
@@ -31,19 +33,21 @@ public class UnityInputService : MonoBehaviour, IInputService
             _prevPos = _initPos;
             _currPos = _initPos;
         }
-#elif UNITY_IOS || UNITY_ANDROID
-        if (Input.touchCount > 0)
+#endif
+
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        if (Input.touchCount > 0 && _initTouch == false)
         {
             _initPos = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
             _prevPos = _initPos;
             _currPos = _initPos;
+            _initTouch = true;
         }
 #endif
 
         //CALCULATIONS
         _delta = _currPos - _prevPos;
         _direction = (_currPos - _initPos).normalized;
-
 
         //UPDATE
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
@@ -58,17 +62,19 @@ public class UnityInputService : MonoBehaviour, IInputService
             _prevPos = Vector3.zero;
             _currPos = Vector3.zero;
         }
-#elif UNITY_IOS || UNITY_ANDROID
+#endif
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
         if (Input.touchCount > 0)
         {
             _prevPos = _currPos;
             _currPos = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
         }
-        if (Input.touchCount == 0)
+        else
         {
             _initPos = Vector3.zero;
             _prevPos = Vector3.zero;
             _currPos = Vector3.zero;
+            _initTouch = false;
         }
 #endif
     }

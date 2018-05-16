@@ -131,4 +131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae05db26deef553438476a6ff8301108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityName: Cube
+  _entityName: Player
+  _speed: 100

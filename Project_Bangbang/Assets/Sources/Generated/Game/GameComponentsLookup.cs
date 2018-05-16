@@ -8,25 +8,31 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Position = 0;
-    public const int PositionListener = 1;
-    public const int ToDestroy = 2;
-    public const int ToDestroyListener = 3;
-    public const int View = 4;
+    public const int MoveFromTouch = 0;
+    public const int Position = 1;
+    public const int PositionListener = 2;
+    public const int Speed = 3;
+    public const int ToDestroy = 4;
+    public const int ToDestroyListener = 5;
+    public const int View = 6;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
+        "MoveFromTouch",
         "Position",
         "PositionListener",
+        "Speed",
         "ToDestroy",
         "ToDestroyListener",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(MoveFromTouchComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(SpeedComponent),
         typeof(ToDestroyComponent),
         typeof(ToDestroyListenerComponent),
         typeof(ViewComponent)
