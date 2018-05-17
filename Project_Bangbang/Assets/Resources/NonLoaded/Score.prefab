@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: score
-  _spawnPositionID: 
+  _spawnPositionID: []
   _parentID: 
   initScore: 0
 --- !u!114 &114926445902282062

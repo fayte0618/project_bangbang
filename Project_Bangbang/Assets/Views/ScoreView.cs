@@ -15,6 +15,10 @@ public class ScoreView : UnityView, IScoreListener
     protected override void Initialize (Contexts contexts, GameEntity entity)
     {
         _text.text = entity.score.current.ToString();
+        if (entity.hasViewData && entity.viewData.parentID != "")
+        {
+            this.transform.SetParent(ScenePositionUtility.Instance.GetParent(entity.viewData.parentID), false);
+        }
     }
 
     protected override void RegisterListeners (GameEntity entity)

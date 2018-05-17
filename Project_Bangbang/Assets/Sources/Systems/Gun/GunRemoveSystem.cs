@@ -34,7 +34,7 @@ public class GunRemoveSystem : ReactiveSystem<GameEntity>
                 var ety = _game.GetEntityWithID(gun.Value);
                 if (ety != null)
                 {
-                    ety.AddToDestroy(1);
+                    ety.ReplaceToDestroy(1);
                 }
             }
         }

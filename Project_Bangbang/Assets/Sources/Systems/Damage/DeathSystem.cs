@@ -28,7 +28,7 @@ public class DeathSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             e.isDead = true;
-            e.AddToDestroy(1);
+            e.ReplaceToDestroy(1);
         }
     }
 }

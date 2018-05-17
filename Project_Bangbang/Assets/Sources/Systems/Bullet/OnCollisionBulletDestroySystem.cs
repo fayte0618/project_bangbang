@@ -30,16 +30,16 @@ public class OnCollisionBulletDestroySystem : ReactiveSystem<GameEntity>
             var bullets = e.collision.current
                             .Where(col => col.Value == CollisionType.ENTER || col.Value == CollisionType.STAY)
                             .Select(col => _game.GetEntityWithID(col.Key))
+                            .Where(other => other.hasToDestroy == false && other.hasBullet)
                             .Where(other =>
                             {
                                 if (other.hasTag && e.hasTag) { return other.tag.current != e.tag.current; }
                                 else { return true; }
-                            })
-                            .Where(ety => ety.hasBullet);
+                            });
 
             foreach (var bullet in bullets)
             {
-                bullet.AddToDestroy(0);
+                bullet.ReplaceToDestroy(1);
             }
         }
     }

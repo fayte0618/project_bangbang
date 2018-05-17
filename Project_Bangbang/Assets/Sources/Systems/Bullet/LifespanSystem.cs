@@ -22,7 +22,7 @@ public class LifespanSystem : IExecuteSystem
 
             if (e.lifespan.remaining <= 0)
             {
-                e.AddToDestroy(0);
+                e.ReplaceToDestroy(0);
             }
         }
     }

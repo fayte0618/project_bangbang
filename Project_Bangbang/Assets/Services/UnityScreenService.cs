@@ -6,6 +6,8 @@ public class UnityScreenService : MonoBehaviour, IScreenService
 {
     [SerializeField]
     private Collider2D _bounds;
+    [SerializeField]
+    private Collider2D _patrolBounds;
 
 
     public Vector2 ConstrainToNearest (Vector2 worldPos)
@@ -19,8 +21,8 @@ public class UnityScreenService : MonoBehaviour, IScreenService
     /// <returns></returns>
     public Vector2 RandomPoint ()
     {
-        var xPos = UnityEngine.Random.Range(_bounds.bounds.min.x, _bounds.bounds.max.x);
-        var yPos = UnityEngine.Random.Range(_bounds.bounds.min.y, _bounds.bounds.max.y);
+        var xPos = UnityEngine.Random.Range(_patrolBounds.bounds.min.x, _patrolBounds.bounds.max.x);
+        var yPos = UnityEngine.Random.Range(_patrolBounds.bounds.min.y, _patrolBounds.bounds.max.y);
 
         return new Vector2(xPos, yPos);
     }

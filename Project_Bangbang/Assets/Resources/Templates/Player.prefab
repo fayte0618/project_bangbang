@@ -254,9 +254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: player
-  _spawnPositionID: 
+  _spawnPositionID: []
   _parentID: 
-  _speed: 100
+  _speed: 50
   health: 3
   gunEntity:
   - gun

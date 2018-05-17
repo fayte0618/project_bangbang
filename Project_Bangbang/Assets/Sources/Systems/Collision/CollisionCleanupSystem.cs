@@ -16,7 +16,9 @@ public class CollisionCleanupSystem : ICleanupSystem
     {
         foreach (var col in _collisions)
         {
-            col.ReplaceCollision(new Dictionary<int, CollisionType>());
+            var dict = col.collision.current;
+            dict.Clear();
+            col.ReplaceCollision(dict);
         }
     }
 }

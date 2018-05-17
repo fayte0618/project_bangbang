@@ -43,9 +43,12 @@ public class DamageCollisionSystem : ReactiveSystem<GameEntity>
                             .Select(other => other.damage.value)
                             .Aggregate(0, (total, damage) => total + damage);
 
-            var inputety = _input.CreateEntity();
-            inputety.AddInputTotalDamage(e.iD.number, totalDamage);
-            inputety.AddToDestroy(1);
+            if (totalDamage > 0)
+            {
+                var inputety = _input.CreateEntity();
+                inputety.AddInputTotalDamage(e.iD.number, totalDamage);
+                inputety.ReplaceToDestroy(1);
+            }
         }
     }
 }

@@ -346,6 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 698230347}
+  - {fileID: 1608569660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -502,9 +503,12 @@ MonoBehaviour:
       elementNameOverride: 
       elementIcon: {fileID: 0}
     reqReferences: {fileID: 0}
-    _keyValues: []
-    _keys: []
-    _values: []
+    _keyValues:
+    - pscore
+    _keys:
+    - pscore
+    _values:
+    - {fileID: 1219813123}
   _spawnPositionList:
     reorderableList:
       canAdd: 1
@@ -790,6 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bounds: {fileID: 698230348}
+  _patrolBounds: {fileID: 1608569661}
 --- !u!1 &916922982
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +919,15 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457803743339732, guid: 65024edf081a79b4296e5d073aa01d86, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296071619390440, guid: 65024edf081a79b4296e5d073aa01d86,
+        type: 2}
+      propertyPath: _parentID
+      value: pscore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65024edf081a79b4296e5d073aa01d86, type: 2}
@@ -1073,11 +1087,23 @@ MonoBehaviour:
   _set:
   - ids:
     - enemy
-    cooldown: 5
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    cooldown: 2
   - ids:
     - enemy
     - enemy
-    cooldown: 5
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    cooldown: 2
   _repeat: 1
 --- !u!4 &1207355266
 Transform:
@@ -1247,6 +1273,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseFolder: Templates
+--- !u!1 &1608569659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1608569660}
+  - component: {fileID: 1608569661}
+  m_Layer: 8
+  m_Name: PatrolBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1608569660
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1608569659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 565833717}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1608569661
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1608569659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0075342655, y: 0.9650364}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.059585, y: 6.0006886}
+  m_EdgeRadius: 0
 --- !u!224 &2028591624 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224095593553279112, guid: 65024edf081a79b4296e5d073aa01d86,
