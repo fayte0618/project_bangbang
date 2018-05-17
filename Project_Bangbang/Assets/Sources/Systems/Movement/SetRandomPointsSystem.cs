@@ -34,10 +34,13 @@ public class SetRandomPointsSystem : ReactiveSystem<GameEntity>
             for (int i = 0; i < numPts; i++)
             {
                 var newPos = _meta.screenService.current.RandomPoint();
-                points[i] = new PointData()
+                var newRot = e.randomPath.includeRotation ? Random.insideUnitSphere * 360f : Vector3.zero; //on z because 2d
+                newRot.x = 0f;
+                newRot.y = 0f;
+               points[i] = new PointData()
                 {
                     position = newPos,
-                    rotation = e.randomPath.includeRotation ? Random.insideUnitSphere * 360f : Vector3.zero,
+                    rotation = newRot,
                     duration = Random.Range((float)e.randomPath.duration.min, (float)e.randomPath.duration.max)
                 };
             }

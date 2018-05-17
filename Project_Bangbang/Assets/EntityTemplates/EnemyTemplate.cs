@@ -52,7 +52,7 @@ public class EnemyTemplate : UnityEntityTemplate
 
         gameety.AddGunSlots(slots);
 
-        gameety.AddRandomPath(numPoints, true, durPerPoint);
+        gameety.AddRandomPath(numPoints, false, durPerPoint);
 
         return gameety;
     }

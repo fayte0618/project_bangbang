@@ -27,25 +27,26 @@ public static class GameComponentsLookup {
     public const int MoveFromTouch = 16;
     public const int MovementPath = 17;
     public const int Path = 18;
-    public const int Position = 19;
-    public const int PositionListener = 20;
-    public const int RandomPath = 21;
-    public const int Score = 22;
-    public const int ScoreListener = 23;
-    public const int Shoot = 24;
-    public const int ShootListener = 25;
-    public const int Spawner = 26;
-    public const int SpawnSet = 27;
-    public const int SpawnSetID = 28;
-    public const int Speed = 29;
-    public const int Tag = 30;
-    public const int Timer = 31;
-    public const int TimerState = 32;
-    public const int ToDestroy = 33;
-    public const int View = 34;
-    public const int ViewData = 35;
+    public const int PathListener = 19;
+    public const int Position = 20;
+    public const int PositionListener = 21;
+    public const int RandomPath = 22;
+    public const int Score = 23;
+    public const int ScoreListener = 24;
+    public const int Shoot = 25;
+    public const int ShootListener = 26;
+    public const int Spawner = 27;
+    public const int SpawnSet = 28;
+    public const int SpawnSetID = 29;
+    public const int Speed = 30;
+    public const int Tag = 31;
+    public const int Timer = 32;
+    public const int TimerState = 33;
+    public const int ToDestroy = 34;
+    public const int View = 35;
+    public const int ViewData = 36;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 37;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -67,6 +68,7 @@ public static class GameComponentsLookup {
         "MoveFromTouch",
         "MovementPath",
         "Path",
+        "PathListener",
         "Position",
         "PositionListener",
         "RandomPath",
@@ -106,6 +108,7 @@ public static class GameComponentsLookup {
         typeof(MoveFromTouchComponent),
         typeof(MovementPathComponent),
         typeof(PathComponent),
+        typeof(PathListenerComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
         typeof(RandomPathComponent),

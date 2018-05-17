@@ -31,7 +31,8 @@ public class EnemyView : UnityView, IHealthListener, IPositionListener
 
     public void OnPosition (GameEntity entity, Vector3 current)
     {
-        this.transform.position = current;
+        if (this.transform.position != current) { this.transform.position = current; }
+
     }
 
     protected override void Initialize (Contexts contexts, GameEntity entity)
@@ -39,6 +40,11 @@ public class EnemyView : UnityView, IHealthListener, IPositionListener
         _health.text = entity.health.current.ToString();
         _health.GetComponent<MeshRenderer>().sortingOrder = layerValue;
         this.transform.position = entity.position.current;
+        if (entity.hasViewData && entity.viewData.spawnPositionID.Length > 0)
+        {
+            var inputety = this.contexts.input.CreateEntity();
+            inputety.AddInputNewPosition(this.ID, ScenePositionUtility.Instance.GetSpawnPosition(entity.viewData.spawnPositionID));
+        }
     }
 
     protected override void RegisterListeners (GameEntity entity)
