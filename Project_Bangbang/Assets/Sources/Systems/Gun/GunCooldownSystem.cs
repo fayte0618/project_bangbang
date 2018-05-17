@@ -18,7 +18,6 @@ public class GunCooldownSystem : IExecuteSystem
     {
         foreach (var e in _guns)
         {
-            e.ReplaceCooldown(e.cooldown.current - _meta.timeService.current.Delta);
             if (e.cooldown.current <= 0) { e.isShoot = false; }
         }
     }

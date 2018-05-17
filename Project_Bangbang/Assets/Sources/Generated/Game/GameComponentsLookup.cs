@@ -32,15 +32,18 @@ public static class GameComponentsLookup {
     public const int ScoreListener = 21;
     public const int Shoot = 22;
     public const int ShootListener = 23;
-    public const int Speed = 24;
-    public const int Tag = 25;
-    public const int Timer = 26;
-    public const int TimerState = 27;
-    public const int ToDestroy = 28;
-    public const int View = 29;
-    public const int ViewData = 30;
+    public const int Spawner = 24;
+    public const int SpawnSet = 25;
+    public const int SpawnSetID = 26;
+    public const int Speed = 27;
+    public const int Tag = 28;
+    public const int Timer = 29;
+    public const int TimerState = 30;
+    public const int ToDestroy = 31;
+    public const int View = 32;
+    public const int ViewData = 33;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 34;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -67,6 +70,9 @@ public static class GameComponentsLookup {
         "ScoreListener",
         "Shoot",
         "ShootListener",
+        "Spawner",
+        "SpawnSet",
+        "SpawnSetID",
         "Speed",
         "Tag",
         "Timer",
@@ -101,6 +107,9 @@ public static class GameComponentsLookup {
         typeof(ScoreListenerComponent),
         typeof(ShootComponent),
         typeof(ShootListenerComponent),
+        typeof(SpawnerComponent),
+        typeof(SpawnSetComponent),
+        typeof(SpawnSetIDComponent),
         typeof(SpeedComponent),
         typeof(TagComponent),
         typeof(TimerComponent),
