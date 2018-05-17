@@ -34,8 +34,9 @@ public static class GameComponentsLookup {
     public const int Tag = 23;
     public const int ToDestroy = 24;
     public const int View = 25;
+    public const int ViewData = 26;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -63,7 +64,8 @@ public static class GameComponentsLookup {
         "Speed",
         "Tag",
         "ToDestroy",
-        "View"
+        "View",
+        "ViewData"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -92,6 +94,7 @@ public static class GameComponentsLookup {
         typeof(SpeedComponent),
         typeof(TagComponent),
         typeof(ToDestroyComponent),
-        typeof(ViewComponent)
+        typeof(ViewComponent),
+        typeof(ViewDataComponent)
     };
 }

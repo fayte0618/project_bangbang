@@ -7,13 +7,22 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
     [Header("Entity Settings")]
     [SerializeField]
     string _entityName;
+    [SerializeField]
+    string _spawnPositionID;
+    [SerializeField]
+    string _parentID;
 
     public string Name { get { return _entityName; } }
 
     public IEntity Create ()
     {
         var entity = InitializeEntity(Contexts.sharedInstance);
-        if (entity is GameEntity) { InitializeView((GameEntity)entity, Contexts.sharedInstance); }
+        if (entity is GameEntity)
+        {
+            var gameety = (GameEntity)entity;
+            gameety.AddViewData(_spawnPositionID, _parentID);
+            InitializeView(gameety, Contexts.sharedInstance);
+        }
         return entity;
     }
 
