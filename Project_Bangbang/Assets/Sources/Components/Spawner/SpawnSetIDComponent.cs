@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Entitas.CodeGeneration.Attributes;
+using Entitas;
 
 //[Entitas.CodeGenerator.SingleEntity]
 [Game]

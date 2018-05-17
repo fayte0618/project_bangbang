@@ -11,17 +11,17 @@ public partial class GameEntity {
     public SpawnSetIDComponent spawnSetID { get { return (SpawnSetIDComponent)GetComponent(GameComponentsLookup.SpawnSetID); } }
     public bool hasSpawnSetID { get { return HasComponent(GameComponentsLookup.SpawnSetID); } }
 
-    public void AddSpawnSetID(SpawnSetIDComponent newValue) {
+    public void AddSpawnSetID(int newNumber) {
         var index = GameComponentsLookup.SpawnSetID;
         var component = CreateComponent<SpawnSetIDComponent>(index);
-        component.value = newValue;
+        component.number = newNumber;
         AddComponent(index, component);
     }
 
-    public void ReplaceSpawnSetID(SpawnSetIDComponent newValue) {
+    public void ReplaceSpawnSetID(int newNumber) {
         var index = GameComponentsLookup.SpawnSetID;
         var component = CreateComponent<SpawnSetIDComponent>(index);
-        component.value = newValue;
+        component.number = newNumber;
         ReplaceComponent(index, component);
     }
 

@@ -36,6 +36,7 @@ public class MainController : MonoBehaviour
 
             .Add(new InputTouchActionExecuteSystem(contexts))
 
+            .Add(new SpawnerSystems(contexts))
             .Add(new TimerSystems(contexts))
             .Add(new GunSystems(contexts))
             .Add(new MovementSystems(contexts))

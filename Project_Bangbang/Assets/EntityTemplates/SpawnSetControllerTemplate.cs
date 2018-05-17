@@ -15,7 +15,7 @@ public class SpawnSetControllerTemplate : UnityEntityTemplate
 
         var gameety = contexts.game.CreateEntity();
         gameety.AddSpawner(_set, _repeat);
-        gameety.AddSpawnSet(0);
+        gameety.AddSpawnSet(-1);
         gameety.AddCooldown(0f);
 
         return gameety;
