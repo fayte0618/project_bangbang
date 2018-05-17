@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityName: Player
   _speed: 100
-  health: 0
+  health: 3
   gunEntity: Gun
   numGuns: 1
   tag: Player

@@ -78,8 +78,14 @@ public class UnityEntityService : MonoBehaviour, IEntityService
         return false;
     }
 
-    public void Return (UnityEntityTemplate instance)
+    /// <summary>
+    /// the instance must be of UnityEntityTemplate type
+    /// </summary>
+    /// <param name="instance"></param>
+    public void Return (dynamic instance)
     {
+        Debug.Assert(instance is UnityEntityTemplate, "only return Unity Entity Template types");
+
         AddToPool(instance);
     }
 

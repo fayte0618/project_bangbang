@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: Enemy
-  health: 100
+  health: 10
   initPos: {x: 0, y: 3}
   tag: Enemy
 --- !u!114 &114440865220454996

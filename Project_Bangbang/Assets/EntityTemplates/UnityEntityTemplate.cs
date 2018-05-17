@@ -38,7 +38,7 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
         }
         else
         {
-            UnityEntityService.Instance.Return(this);
+            Contexts.sharedInstance.meta.entityService.current.Return(this);
         }
     }
 }

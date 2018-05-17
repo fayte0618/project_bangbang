@@ -44,7 +44,7 @@ public abstract class UnityView : MonoBehaviour, IView, IToDestroyListener
 
             if (_template.gameObject.activeSelf)
             {
-                UnityEntityService.Instance.Return(_template);
+                Contexts.sharedInstance.meta.entityService.current.Return(_template);
             }
         }
     }
