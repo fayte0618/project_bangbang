@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections;
-using UnityEngine;
-using Entitas;
+﻿using Entitas;
+using System.Collections.Generic;
 
 public class DestroySystem : ICleanupSystem
 {
@@ -26,7 +24,8 @@ public class DestroySystem : ICleanupSystem
 
         foreach (var ety in _input.GetEntities())
         {
-            ety.Destroy();
+            if (ety.hasToDestroy && ety.toDestroy.delay > 0) { ety.ReplaceToDestroy(ety.toDestroy.delay - 1); }
+            else { ety.Destroy(); }
         }
     }
 }

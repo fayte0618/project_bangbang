@@ -6,10 +6,12 @@ using UnityEngine;
 public class DamageCollisionSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _game;
+    private readonly InputContext _input;
 
     public DamageCollisionSystem (Contexts contexts) : base(contexts.game)
     {
         _game = contexts.game;
+        _input = contexts.input;
     }
 
     protected override ICollector<GameEntity> GetTrigger (IContext<GameEntity> context)
@@ -28,7 +30,9 @@ public class DamageCollisionSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            var newHealth = e.collision.current
+
+            //checks and totals entity received damage from another entity with a different tag
+            var totalDamage = e.collision.current
                             .Where(col => col.Value == CollisionType.ENTER || col.Value == CollisionType.STAY)
                             .Select(col => _game.GetEntityWithID(col.Key))
                             .Where(other =>
@@ -37,12 +41,11 @@ public class DamageCollisionSystem : ReactiveSystem<GameEntity>
                                 else { return other.hasDamage; }
                             })
                             .Select(other => other.damage.value)
-                            .Aggregate(e.health.current, (health, damage) =>
-                            {
-                                return (int)Mathf.Clamp(health - damage, 0, Mathf.Infinity);
-                            });
+                            .Aggregate(0, (total, damage) => total + damage);
 
-            e.ReplaceHealth(newHealth);
+            var inputety = _input.CreateEntity();
+            inputety.AddInputTotalDamage(e.iD.number, totalDamage);
+            inputety.AddToDestroy(1);
         }
     }
 }

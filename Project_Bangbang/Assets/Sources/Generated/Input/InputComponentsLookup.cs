@@ -11,21 +11,33 @@ public static class InputComponentsLookup {
     public const int CreateEntity = 0;
     public const int InputCollision = 1;
     public const int InputNewPosition = 2;
-    public const int InputTouchData = 3;
+    public const int InputToDestroyListener = 3;
+    public const int InputTotalDamage = 4;
+    public const int InputTouchData = 5;
+    public const int Tag = 6;
+    public const int ToDestroy = 7;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
         "CreateEntity",
         "InputCollision",
         "InputNewPosition",
-        "InputTouchData"
+        "InputToDestroyListener",
+        "InputTotalDamage",
+        "InputTouchData",
+        "Tag",
+        "ToDestroy"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(CreateEntityComponent),
         typeof(InputCollisionComponent),
         typeof(InputNewPositionComponent),
-        typeof(InputTouchDataComponent)
+        typeof(InputToDestroyListenerComponent),
+        typeof(InputTotalDamageComponent),
+        typeof(InputTouchDataComponent),
+        typeof(TagComponent),
+        typeof(ToDestroyComponent)
     };
 }

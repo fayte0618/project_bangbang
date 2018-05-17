@@ -2,7 +2,7 @@
 using System.Collections;
 using Entitas.Unity;
 
-public abstract class UnityView : MonoBehaviour, IView, IToDestroyListener
+public abstract class UnityView : MonoBehaviour, IView, IGameToDestroyListener
 {
     protected Contexts contexts;
     protected GameEntity entity;
@@ -30,7 +30,7 @@ public abstract class UnityView : MonoBehaviour, IView, IToDestroyListener
 
         Initialize(contexts, entity);
         RegisterListeners(entity);
-        entity.AddToDestroyListener(this);
+        entity.AddGameToDestroyListener(this);
     }
 
     public void OnToDestroy (GameEntity entity, uint delay)

@@ -4,8 +4,8 @@ using UnityEngine;
 using Entitas;
 
 //[Entitas.CodeGenerator.SingleEntity]
-[Game]
+[Game, Input]
 public sealed class TagComponent : IComponent
 {
-    public string current;
+    public EntityType current;
 }

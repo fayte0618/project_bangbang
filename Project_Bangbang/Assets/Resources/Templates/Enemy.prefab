@@ -230,7 +230,7 @@ MonoBehaviour:
   _entityName: Enemy
   health: 10
   initPos: {x: 0, y: 3}
-  tag: Enemy
+  tag: 2
 --- !u!114 &114440865220454996
 MonoBehaviour:
   m_ObjectHideFlags: 1

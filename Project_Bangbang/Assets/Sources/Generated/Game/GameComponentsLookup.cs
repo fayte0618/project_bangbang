@@ -16,24 +16,26 @@ public static class GameComponentsLookup {
     public const int Dead = 5;
     public const int DeadListener = 6;
     public const int Direction = 7;
-    public const int Gun = 8;
-    public const int GunSlots = 9;
-    public const int Health = 10;
-    public const int HealthListener = 11;
-    public const int ID = 12;
-    public const int Lifespan = 13;
-    public const int MoveFromTouch = 14;
-    public const int Position = 15;
-    public const int PositionListener = 16;
-    public const int Shoot = 17;
-    public const int ShootListener = 18;
-    public const int Speed = 19;
-    public const int Tag = 20;
-    public const int ToDestroy = 21;
-    public const int ToDestroyListener = 22;
-    public const int View = 23;
+    public const int GameToDestroyListener = 8;
+    public const int Gun = 9;
+    public const int GunSlots = 10;
+    public const int Health = 11;
+    public const int HealthListener = 12;
+    public const int ID = 13;
+    public const int Lifespan = 14;
+    public const int MoveFromTouch = 15;
+    public const int Position = 16;
+    public const int PositionListener = 17;
+    public const int Score = 18;
+    public const int ScoreListener = 19;
+    public const int Shoot = 20;
+    public const int ShootListener = 21;
+    public const int Speed = 22;
+    public const int Tag = 23;
+    public const int ToDestroy = 24;
+    public const int View = 25;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -44,6 +46,7 @@ public static class GameComponentsLookup {
         "Dead",
         "DeadListener",
         "Direction",
+        "GameToDestroyListener",
         "Gun",
         "GunSlots",
         "Health",
@@ -53,12 +56,13 @@ public static class GameComponentsLookup {
         "MoveFromTouch",
         "Position",
         "PositionListener",
+        "Score",
+        "ScoreListener",
         "Shoot",
         "ShootListener",
         "Speed",
         "Tag",
         "ToDestroy",
-        "ToDestroyListener",
         "View"
     };
 
@@ -71,6 +75,7 @@ public static class GameComponentsLookup {
         typeof(DeadComponent),
         typeof(DeadListenerComponent),
         typeof(DirectionComponent),
+        typeof(GameToDestroyListenerComponent),
         typeof(GunComponent),
         typeof(GunSlotsComponent),
         typeof(HealthComponent),
@@ -80,12 +85,13 @@ public static class GameComponentsLookup {
         typeof(MoveFromTouchComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(ScoreComponent),
+        typeof(ScoreListenerComponent),
         typeof(ShootComponent),
         typeof(ShootListenerComponent),
         typeof(SpeedComponent),
         typeof(TagComponent),
         typeof(ToDestroyComponent),
-        typeof(ToDestroyListenerComponent),
         typeof(ViewComponent)
     };
 }

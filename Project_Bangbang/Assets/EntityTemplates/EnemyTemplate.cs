@@ -9,8 +9,8 @@ public class EnemyTemplate : UnityEntityTemplate
     private int health;
     [SerializeField]
     private Vector2 initPos;
-    [SerializeField, Tag]
-    private string tag;
+    [SerializeField]
+    private EntityType tag;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {

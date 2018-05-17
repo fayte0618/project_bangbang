@@ -258,7 +258,7 @@ MonoBehaviour:
   health: 3
   gunEntity: Gun
   numGuns: 1
-  tag: Player
+  tag: 1
 --- !u!114 &114664028399677344
 MonoBehaviour:
   m_ObjectHideFlags: 1

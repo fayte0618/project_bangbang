@@ -6,6 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public interface IToDestroyListener {
-    void OnToDestroy(GameEntity entity, uint delay);
+public interface IInputToDestroyListener {
+    void OnToDestroy(InputEntity entity, uint delay);
 }

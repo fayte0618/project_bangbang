@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ToDestroyListenerComponent toDestroyListener { get { return (ToDestroyListenerComponent)GetComponent(GameComponentsLookup.ToDestroyListener); } }
-    public bool hasToDestroyListener { get { return HasComponent(GameComponentsLookup.ToDestroyListener); } }
+    public ScoreListenerComponent scoreListener { get { return (ScoreListenerComponent)GetComponent(GameComponentsLookup.ScoreListener); } }
+    public bool hasScoreListener { get { return HasComponent(GameComponentsLookup.ScoreListener); } }
 
-    public void AddToDestroyListener(System.Collections.Generic.List<IToDestroyListener> newValue) {
-        var index = GameComponentsLookup.ToDestroyListener;
-        var component = CreateComponent<ToDestroyListenerComponent>(index);
+    public void AddScoreListener(System.Collections.Generic.List<IScoreListener> newValue) {
+        var index = GameComponentsLookup.ScoreListener;
+        var component = CreateComponent<ScoreListenerComponent>(index);
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceToDestroyListener(System.Collections.Generic.List<IToDestroyListener> newValue) {
-        var index = GameComponentsLookup.ToDestroyListener;
-        var component = CreateComponent<ToDestroyListenerComponent>(index);
+    public void ReplaceScoreListener(System.Collections.Generic.List<IScoreListener> newValue) {
+        var index = GameComponentsLookup.ScoreListener;
+        var component = CreateComponent<ScoreListenerComponent>(index);
         component.value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveToDestroyListener() {
-        RemoveComponent(GameComponentsLookup.ToDestroyListener);
+    public void RemoveScoreListener() {
+        RemoveComponent(GameComponentsLookup.ScoreListener);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherToDestroyListener;
+    static Entitas.IMatcher<GameEntity> _matcherScoreListener;
 
-    public static Entitas.IMatcher<GameEntity> ToDestroyListener {
+    public static Entitas.IMatcher<GameEntity> ScoreListener {
         get {
-            if (_matcherToDestroyListener == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ToDestroyListener);
+            if (_matcherScoreListener == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ScoreListener);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherToDestroyListener = matcher;
+                _matcherScoreListener = matcher;
             }
 
-            return _matcherToDestroyListener;
+            return _matcherScoreListener;
         }
     }
 }
@@ -65,21 +65,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public void AddToDestroyListener(IToDestroyListener value) {
-        var listeners = hasToDestroyListener
-            ? toDestroyListener.value
-            : new System.Collections.Generic.List<IToDestroyListener>();
+    public void AddScoreListener(IScoreListener value) {
+        var listeners = hasScoreListener
+            ? scoreListener.value
+            : new System.Collections.Generic.List<IScoreListener>();
         listeners.Add(value);
-        ReplaceToDestroyListener(listeners);
+        ReplaceScoreListener(listeners);
     }
 
-    public void RemoveToDestroyListener(IToDestroyListener value, bool removeComponentWhenEmpty = true) {
-        var listeners = toDestroyListener.value;
+    public void RemoveScoreListener(IScoreListener value, bool removeComponentWhenEmpty = true) {
+        var listeners = scoreListener.value;
         listeners.Remove(value);
         if (removeComponentWhenEmpty && listeners.Count == 0) {
-            RemoveToDestroyListener();
+            RemoveScoreListener();
         } else {
-            ReplaceToDestroyListener(listeners);
+            ReplaceScoreListener(listeners);
         }
     }
 }

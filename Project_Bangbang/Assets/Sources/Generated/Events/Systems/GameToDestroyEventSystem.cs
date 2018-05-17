@@ -6,9 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed class ToDestroyEventSystem : Entitas.ReactiveSystem<GameEntity> {
+public sealed class GameToDestroyEventSystem : Entitas.ReactiveSystem<GameEntity> {
 
-    public ToDestroyEventSystem(Contexts contexts) : base(contexts.game) {
+    public GameToDestroyEventSystem(Contexts contexts) : base(contexts.game) {
     }
 
     protected override Entitas.ICollector<GameEntity> GetTrigger(Entitas.IContext<GameEntity> context) {
@@ -18,13 +18,13 @@ public sealed class ToDestroyEventSystem : Entitas.ReactiveSystem<GameEntity> {
     }
 
     protected override bool Filter(GameEntity entity) {
-        return entity.hasToDestroy && entity.hasToDestroyListener;
+        return entity.hasToDestroy && entity.hasGameToDestroyListener;
     }
 
     protected override void Execute(System.Collections.Generic.List<GameEntity> entities) {
         foreach (var e in entities) {
             var component = e.toDestroy;
-            foreach (var listener in e.toDestroyListener.value) {
+            foreach (var listener in e.gameToDestroyListener.value) {
                 listener.OnToDestroy(e, component.delay);
             }
         }

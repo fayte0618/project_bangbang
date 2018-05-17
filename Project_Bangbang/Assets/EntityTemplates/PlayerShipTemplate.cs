@@ -14,8 +14,8 @@ public class PlayerShipTemplate : UnityEntityTemplate
     private string gunEntity;
     [SerializeField]
     private int numGuns = 5;
-    [SerializeField, Tag]
-    private string tag;
+    [SerializeField]
+    private EntityType tag;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
