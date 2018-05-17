@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IScreenService
 {
     Vector2 ConstrainToNearest (Vector2 position);
+    Vector2 RandomPoint ();
 }

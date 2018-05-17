@@ -26,24 +26,26 @@ public static class GameComponentsLookup {
     public const int Lifespan = 15;
     public const int MoveFromTouch = 16;
     public const int MovementPath = 17;
-    public const int Position = 18;
-    public const int PositionListener = 19;
-    public const int Score = 20;
-    public const int ScoreListener = 21;
-    public const int Shoot = 22;
-    public const int ShootListener = 23;
-    public const int Spawner = 24;
-    public const int SpawnSet = 25;
-    public const int SpawnSetID = 26;
-    public const int Speed = 27;
-    public const int Tag = 28;
-    public const int Timer = 29;
-    public const int TimerState = 30;
-    public const int ToDestroy = 31;
-    public const int View = 32;
-    public const int ViewData = 33;
+    public const int Path = 18;
+    public const int Position = 19;
+    public const int PositionListener = 20;
+    public const int RandomPath = 21;
+    public const int Score = 22;
+    public const int ScoreListener = 23;
+    public const int Shoot = 24;
+    public const int ShootListener = 25;
+    public const int Spawner = 26;
+    public const int SpawnSet = 27;
+    public const int SpawnSetID = 28;
+    public const int Speed = 29;
+    public const int Tag = 30;
+    public const int Timer = 31;
+    public const int TimerState = 32;
+    public const int ToDestroy = 33;
+    public const int View = 34;
+    public const int ViewData = 35;
 
-    public const int TotalComponents = 34;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -64,8 +66,10 @@ public static class GameComponentsLookup {
         "Lifespan",
         "MoveFromTouch",
         "MovementPath",
+        "Path",
         "Position",
         "PositionListener",
+        "RandomPath",
         "Score",
         "ScoreListener",
         "Shoot",
@@ -101,8 +105,10 @@ public static class GameComponentsLookup {
         typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
         typeof(MovementPathComponent),
+        typeof(PathComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(RandomPathComponent),
         typeof(ScoreComponent),
         typeof(ScoreListenerComponent),
         typeof(ShootComponent),
