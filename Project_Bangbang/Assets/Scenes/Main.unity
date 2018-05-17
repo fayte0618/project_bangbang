@@ -317,6 +317,21 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114217551422552450, guid: 1195bb1a9b727e743800ed0bfc9c151e,
+        type: 2}
+      propertyPath: numPoints.min
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217551422552450, guid: 1195bb1a9b727e743800ed0bfc9c151e,
+        type: 2}
+      propertyPath: numPoints.max
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217551422552450, guid: 1195bb1a9b727e743800ed0bfc9c151e,
+        type: 2}
+      propertyPath: durPerPoint.max
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1195bb1a9b727e743800ed0bfc9c151e, type: 2}
   m_IsPrefabParent: 0
@@ -1003,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: spawncontroller
-  _spawnPositionID: 
+  _spawnPositionID: []
   _parentID: 
   _set:
   - ids:

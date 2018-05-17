@@ -11,5 +11,7 @@ public class MovementSystems : Feature
         Add(new InputNewPositionSystem(contexts));
         Add(new MoveFromTouchSystem(contexts));
         Add(new AutoMoveSystem(contexts));
+
+        Add(new SetRandomPointsSystem(contexts));
     }
 }

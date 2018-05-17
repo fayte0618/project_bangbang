@@ -13,6 +13,10 @@ public class EnemyTemplate : UnityEntityTemplate
     private EntityType _tag;
     [SerializeField]
     private string[] gunEntity;
+    [SerializeField]
+    private Range numPoints;
+    [SerializeField]
+    private Range durPerPoint;
     //[SerializeField]
     //private float _speed;
     //[SerializeField]
@@ -47,6 +51,8 @@ public class EnemyTemplate : UnityEntityTemplate
         }
 
         gameety.AddGunSlots(slots);
+
+        gameety.AddRandomPath(numPoints, true, durPerPoint);
 
         return gameety;
     }
