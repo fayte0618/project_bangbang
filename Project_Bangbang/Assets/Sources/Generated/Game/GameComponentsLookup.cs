@@ -12,37 +12,42 @@ public static class GameComponentsLookup {
     public const int Bullet = 1;
     public const int Collision = 2;
     public const int Cooldown = 3;
-    public const int Damage = 4;
-    public const int Dead = 5;
-    public const int DeadListener = 6;
-    public const int Direction = 7;
-    public const int GameToDestroyListener = 8;
-    public const int Gun = 9;
-    public const int GunSlots = 10;
-    public const int Health = 11;
-    public const int HealthListener = 12;
-    public const int ID = 13;
-    public const int Lifespan = 14;
-    public const int MoveFromTouch = 15;
-    public const int Position = 16;
-    public const int PositionListener = 17;
-    public const int Score = 18;
-    public const int ScoreListener = 19;
-    public const int Shoot = 20;
-    public const int ShootListener = 21;
-    public const int Speed = 22;
-    public const int Tag = 23;
-    public const int ToDestroy = 24;
-    public const int View = 25;
-    public const int ViewData = 26;
+    public const int CurveTimer = 4;
+    public const int Damage = 5;
+    public const int Dead = 6;
+    public const int DeadListener = 7;
+    public const int Direction = 8;
+    public const int GameToDestroyListener = 9;
+    public const int Gun = 10;
+    public const int GunSlots = 11;
+    public const int Health = 12;
+    public const int HealthListener = 13;
+    public const int ID = 14;
+    public const int Lifespan = 15;
+    public const int MoveFromTouch = 16;
+    public const int MovementPath = 17;
+    public const int Position = 18;
+    public const int PositionListener = 19;
+    public const int Score = 20;
+    public const int ScoreListener = 21;
+    public const int Shoot = 22;
+    public const int ShootListener = 23;
+    public const int Speed = 24;
+    public const int Tag = 25;
+    public const int Timer = 26;
+    public const int TimerState = 27;
+    public const int ToDestroy = 28;
+    public const int View = 29;
+    public const int ViewData = 30;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "AutoMove",
         "Bullet",
         "Collision",
         "Cooldown",
+        "CurveTimer",
         "Damage",
         "Dead",
         "DeadListener",
@@ -55,6 +60,7 @@ public static class GameComponentsLookup {
         "ID",
         "Lifespan",
         "MoveFromTouch",
+        "MovementPath",
         "Position",
         "PositionListener",
         "Score",
@@ -63,6 +69,8 @@ public static class GameComponentsLookup {
         "ShootListener",
         "Speed",
         "Tag",
+        "Timer",
+        "TimerState",
         "ToDestroy",
         "View",
         "ViewData"
@@ -73,6 +81,7 @@ public static class GameComponentsLookup {
         typeof(BulletComponent),
         typeof(CollisionComponent),
         typeof(CooldownComponent),
+        typeof(CurveTimerComponent),
         typeof(DamageComponent),
         typeof(DeadComponent),
         typeof(DeadListenerComponent),
@@ -85,6 +94,7 @@ public static class GameComponentsLookup {
         typeof(IDComponent),
         typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
+        typeof(MovementPathComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
         typeof(ScoreComponent),
@@ -93,6 +103,8 @@ public static class GameComponentsLookup {
         typeof(ShootListenerComponent),
         typeof(SpeedComponent),
         typeof(TagComponent),
+        typeof(TimerComponent),
+        typeof(TimerStateComponent),
         typeof(ToDestroyComponent),
         typeof(ViewComponent),
         typeof(ViewDataComponent)

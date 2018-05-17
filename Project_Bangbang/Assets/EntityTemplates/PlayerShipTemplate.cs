@@ -11,9 +11,7 @@ public class PlayerShipTemplate : UnityEntityTemplate
     [SerializeField]
     private int health;
     [SerializeField]
-    private string gunEntity;
-    [SerializeField]
-    private int numGuns = 5;
+    private string[] gunEntity;
     [SerializeField]
     private EntityType tag;
 
@@ -25,10 +23,10 @@ public class PlayerShipTemplate : UnityEntityTemplate
         gameety.isMoveFromTouch = true;
 
         var slots = new Dictionary<int, int>();
-        for (int i = 0; i < numGuns; i++)
+        for (int i = 0; i < gunEntity.Length; i++)
         {
             IEntity entity;
-            contexts.meta.entityService.current.Get(gunEntity, out entity);
+            contexts.meta.entityService.current.Get(gunEntity[i], out entity);
             var gun = (GameEntity)entity;
             slots.Add(i, gun.iD.number);
 

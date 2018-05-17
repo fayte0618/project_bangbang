@@ -285,9 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _createOnStart: 1
   entities:
-  - Player
   - Enemy
-  - Score
 --- !u!4 &590147186
 Transform:
   m_ObjectHideFlags: 0

@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 4514123297746406}
   - component: {fileID: 114217551422552450}
   - component: {fileID: 114440865220454996}
+  - component: {fileID: 114238201965576534}
+  - component: {fileID: 114513339170822220}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -228,9 +230,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: Enemy
-  health: 10
-  initPos: {x: 0, y: 3}
-  tag: 2
+  _spawnPositionID: 
+  _parentID: 
+  _health: 10
+  _initPos: {x: 0, y: 0}
+  _tag: 2
+  slots: 0
+  gunEntity: 0
+--- !u!114 &114238201965576534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434861902415490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a988cfd156ad53a4fafe8b7b3019b805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
 --- !u!114 &114440865220454996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +262,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 102959033140024952}
   layerValue: 1
+--- !u!114 &114513339170822220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434861902415490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1feff0311ed0f04997ad59541a149b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _origin: {fileID: 0}
+  _destination: {fileID: 0}
+  delay: 0
+  _ease: 0
+  _duration: 0
+  _loopCount: 0
+  type: 0
 --- !u!212 &212250195444352438
 SpriteRenderer:
   m_ObjectHideFlags: 1
