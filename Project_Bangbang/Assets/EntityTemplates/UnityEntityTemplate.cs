@@ -8,7 +8,7 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
     [SerializeField]
     string _entityName;
     [SerializeField]
-    string _spawnPositionID;
+    string[] _spawnPositionID;
     [SerializeField]
     string _parentID;
 

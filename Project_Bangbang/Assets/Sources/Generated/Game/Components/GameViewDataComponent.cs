@@ -11,7 +11,7 @@ public partial class GameEntity {
     public ViewDataComponent viewData { get { return (ViewDataComponent)GetComponent(GameComponentsLookup.ViewData); } }
     public bool hasViewData { get { return HasComponent(GameComponentsLookup.ViewData); } }
 
-    public void AddViewData(string newSpawnPositionID, string newParentID) {
+    public void AddViewData(string[] newSpawnPositionID, string newParentID) {
         var index = GameComponentsLookup.ViewData;
         var component = CreateComponent<ViewDataComponent>(index);
         component.spawnPositionID = newSpawnPositionID;
@@ -19,7 +19,7 @@ public partial class GameEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceViewData(string newSpawnPositionID, string newParentID) {
+    public void ReplaceViewData(string[] newSpawnPositionID, string newParentID) {
         var index = GameComponentsLookup.ViewData;
         var component = CreateComponent<ViewDataComponent>(index);
         component.spawnPositionID = newSpawnPositionID;

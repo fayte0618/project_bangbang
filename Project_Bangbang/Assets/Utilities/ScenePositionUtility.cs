@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using RotaryHeart.Lib.SerializableDictionary;
@@ -28,7 +29,14 @@ public class ScenePositionUtility : MonoBehaviour
         return parent;
     }
 
-    public Vector3 GetSpawnPosition(string id)
+    public Vector3 GetSpawnPosition (string[] ids)
+    {
+        var positions = ids.Select(id => GetSpawnPosition(id)).ToArray();
+
+        return positions[Random.Range(0, positions.Length)];
+    }
+
+    public Vector3 GetSpawnPosition (string id)
     {
         Transform trans;
         _spawnPositionList.TryGetValue(id, out trans);

@@ -7,6 +7,6 @@ using Entitas;
 [Game]
 public sealed class ViewDataComponent : IComponent
 {
-    public string spawnPositionID;
+    public string[] spawnPositionID;
     public string parentID;
 }
