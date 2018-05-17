@@ -74,7 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0026f9e30adffa842947973ee21359e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityName: Score
+  _entityName: score
+  _spawnPositionID: 
+  _parentID: 
   initScore: 0
 --- !u!114 &114926445902282062
 MonoBehaviour:

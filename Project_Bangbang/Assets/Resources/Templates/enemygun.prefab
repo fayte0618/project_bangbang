@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114147863333358166}
   - component: {fileID: 114386629088035586}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: enemygun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d9d3c8883c4c7478f4800ddd1f43b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityName: gun
+  _entityName: enemygun
   _spawnPositionID: 
   _parentID: 
-  _bulletEntityID: straightbullet
+  _bulletEntityID: straightbulletdown
   _fireRate: 0.1
   _initPos: {x: 0, y: 0}
 --- !u!114 &114386629088035586

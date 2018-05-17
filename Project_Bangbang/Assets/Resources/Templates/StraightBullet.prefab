@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114163369289360426}
   - component: {fileID: 114287474610009262}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: StraightBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,12 +98,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2962ad5ec6e82f94bbf1258ca6932b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityName: Bullet
+  _entityName: straightbullet
+  _spawnPositionID: 
+  _parentID: 
   speed: 10
-  direction: {x: 0, y: 1}
   damage: 1
   lifespan: 2
   initPos: {x: 0, y: 0}
+  _movementPathX:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _movementPathY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _type: 3
 --- !u!114 &114287474610009262
 MonoBehaviour:
   m_ObjectHideFlags: 1

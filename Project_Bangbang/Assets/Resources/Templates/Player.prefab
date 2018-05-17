@@ -253,11 +253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae05db26deef553438476a6ff8301108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entityName: Player
+  _entityName: player
+  _spawnPositionID: 
+  _parentID: 
   _speed: 100
   health: 3
-  gunEntity: Gun
-  numGuns: 1
+  gunEntity:
+  - gun
   tag: 1
 --- !u!114 &114664028399677344
 MonoBehaviour:

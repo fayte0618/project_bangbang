@@ -12,9 +12,7 @@ public class EnemyTemplate : UnityEntityTemplate
     [SerializeField]
     private EntityType _tag;
     [SerializeField]
-    private int slots;
-    [SerializeField]
-    private int gunEntity;
+    private string[] gunEntity;
     //[SerializeField]
     //private float _speed;
     //[SerializeField]
@@ -36,6 +34,19 @@ public class EnemyTemplate : UnityEntityTemplate
         //gameety.AddTimerState(TimerState.PLAY);
         //gameety.AddMovementPath(_movementPathX, _movementPathY, _type);
         //gameety.isAutoMove = true;
+
+        var slots = new Dictionary<int, int>();
+        for (int i = 0; i < gunEntity.Length; i++)
+        {
+            IEntity entity;
+            contexts.meta.entityService.current.Get(gunEntity[i], out entity);
+            var gun = (GameEntity)entity;
+            slots.Add(i, gun.iD.number);
+
+            gun.AddTag(_tag);
+        }
+
+        gameety.AddGunSlots(slots);
 
         return gameety;
     }

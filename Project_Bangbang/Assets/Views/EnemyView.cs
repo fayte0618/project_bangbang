@@ -8,6 +8,21 @@ public class EnemyView : UnityView, IHealthListener, IPositionListener
     private TextMesh _health;
     [SerializeField]
     private int layerValue;
+    [SerializeField]
+    Transform[] gunSlots;
+
+    void Update ()
+    {
+        if (this.entity.hasGunSlots)
+        {
+            foreach (var slot in this.entity.gunSlots.current)
+            {
+                var inputEty = contexts.input.CreateEntity();
+                inputEty.AddInputNewPosition(slot.Value, gunSlots[slot.Key].position);
+            }
+        }
+
+    }
 
     public void OnHealth (GameEntity entity, int current)
     {

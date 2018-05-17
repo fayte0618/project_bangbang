@@ -10,5 +10,6 @@ public class GunSystems : Feature
         //Add(system here);
         Add(new AutoShootSystem(contexts));
         Add(new GunCooldownSystem(contexts));
+        Add(new GunRemoveSystem(contexts));
     }
 }

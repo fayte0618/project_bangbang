@@ -40,7 +40,7 @@ public abstract class UnityView : MonoBehaviour, IView, IGameToDestroyListener
             UnregisterListeners(entity);
             //entity.RemoveToDestroyListener(this);
 
-            link.Unlink();
+            if (link != null && link.entity != null) { link.Unlink(); }
 
             if (_template.gameObject.activeSelf)
             {
