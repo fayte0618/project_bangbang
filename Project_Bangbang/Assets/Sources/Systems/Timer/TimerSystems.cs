@@ -11,5 +11,6 @@ public class TimerSystems : Feature
         Add(new TimerStateChangeSystem(contexts));
         Add(new MovementCurveTimerSystem(contexts));
         Add(new CooldownSystem(contexts));
+        Add(new DeltaUpdateSystem(contexts));
     }
 }

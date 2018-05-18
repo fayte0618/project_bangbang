@@ -10,6 +10,7 @@ public class MovementSystems : Feature
         //Add(system here);
         Add(new InputNewPositionSystem(contexts));
         Add(new MoveFromTouchSystem(contexts));
+        Add(new JobAutoMoveSystem(contexts.game, 4));
         Add(new AutoMoveSystem(contexts));
 
         Add(new SetRandomPointsSystem(contexts));

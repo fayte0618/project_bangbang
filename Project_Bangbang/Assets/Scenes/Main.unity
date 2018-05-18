@@ -400,7 +400,6 @@ MonoBehaviour:
   entities:
   - spawncontroller
   - score
-  - player
 --- !u!4 &590147186
 Transform:
   m_ObjectHideFlags: 0
@@ -1086,6 +1085,31 @@ MonoBehaviour:
   _parentID: 
   _set:
   - ids:
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
+    - enemy
     - enemy
     - enemy
     - enemy

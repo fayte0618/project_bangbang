@@ -19,23 +19,23 @@ public class AutoMoveSystem : IExecuteSystem
         //calculate movement
         foreach (var move in _movers)
         {
-            Vector2 vel = Vector2.zero;
+            //Vector2 vel = Vector2.zero;
 
-            if (move.hasMovementPath && move.hasCurveTimer)
-            {
-                //calculate velocity on animation curve
-                var currentX = move.movementPath.currentX;
-                var currCurveMultX = currentX.Evaluate(move.curveTimer.current);
+            //if (move.hasMovementPath && move.hasCurveTimer)
+            //{
+            //    //calculate velocity on animation curve
+            //    var currentX = move.movementPath.currentX;
+            //    var currCurveMultX = currentX.Evaluate(move.curveTimer.current);
 
-                var currentY = move.movementPath.currentY;
-                var currCurveMultY = currentY.Evaluate(move.curveTimer.current);
+            //    var currentY = move.movementPath.currentY;
+            //    var currCurveMultY = currentY.Evaluate(move.curveTimer.current);
 
-                vel = new Vector2(currCurveMultX, currCurveMultY) * move.speed.current;
-                vel *= _meta.timeService.current.Delta;
-            }
-            else if (move.hasDirection) { vel = (move.direction.current * move.speed.current) * _meta.timeService.current.Delta; }
+            //    vel = new Vector2(currCurveMultX, currCurveMultY) * move.speed.current;
+            //    vel *= _meta.timeService.current.Delta;
+            //}
+            //else if (move.hasDirection) { vel = (move.direction.current * move.speed.current) * _meta.timeService.current.Delta; }
 
-            move.ReplacePosition((Vector2)move.position.current + vel);
+            move.ReplacePosition(move.position.current);
         }
     }
 
