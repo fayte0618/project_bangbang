@@ -33,8 +33,10 @@ public class AutoShootSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             e.isShoot = true;
-            IEntity bullet;
-            _meta.entityService.current.Get(e.bullet.entityID, out bullet);
+            IEntity bullet = null;
+            if (e.hasBulletOverride && e.bulletOverride.entityID != "") { _meta.entityService.current.Get(e.bulletOverride.entityID, out bullet); }
+            else if (e.bullet.entityID != "") { _meta.entityService.current.Get(e.bullet.entityID, out bullet); }
+
             if (bullet != null)
             {
                 var gameEty = (GameEntity)bullet;

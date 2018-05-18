@@ -10,52 +10,54 @@ public static class GameComponentsLookup {
 
     public const int AutoMove = 0;
     public const int Bullet = 1;
-    public const int BulletPowerup = 2;
-    public const int Collision = 3;
-    public const int Cooldown = 4;
-    public const int CurveTimer = 5;
-    public const int Damage = 6;
-    public const int Dead = 7;
-    public const int DeadListener = 8;
-    public const int Delta = 9;
-    public const int Direction = 10;
-    public const int GameToDestroyListener = 11;
-    public const int Gun = 12;
-    public const int GunSlots = 13;
-    public const int Health = 14;
-    public const int HealthListener = 15;
-    public const int ID = 16;
-    public const int Lifespan = 17;
-    public const int MoveFromTouch = 18;
-    public const int MovementPath = 19;
-    public const int Path = 20;
-    public const int PathListener = 21;
-    public const int Position = 22;
-    public const int PositionListener = 23;
-    public const int PowerupActivated = 24;
-    public const int PowerupActivatedListener = 25;
-    public const int PowerupDuration = 26;
-    public const int RandomPath = 27;
-    public const int Score = 28;
-    public const int ScoreListener = 29;
-    public const int Shoot = 30;
-    public const int ShootListener = 31;
-    public const int Spawner = 32;
-    public const int SpawnSet = 33;
-    public const int SpawnSetID = 34;
-    public const int Speed = 35;
-    public const int Tag = 36;
-    public const int Timer = 37;
-    public const int TimerState = 38;
-    public const int ToDestroy = 39;
-    public const int View = 40;
-    public const int ViewData = 41;
+    public const int BulletOverride = 2;
+    public const int BulletPowerup = 3;
+    public const int Collision = 4;
+    public const int Cooldown = 5;
+    public const int CurveTimer = 6;
+    public const int Damage = 7;
+    public const int Dead = 8;
+    public const int DeadListener = 9;
+    public const int Delta = 10;
+    public const int Direction = 11;
+    public const int GameToDestroyListener = 12;
+    public const int Gun = 13;
+    public const int GunSlots = 14;
+    public const int Health = 15;
+    public const int HealthListener = 16;
+    public const int ID = 17;
+    public const int Lifespan = 18;
+    public const int MoveFromTouch = 19;
+    public const int MovementPath = 20;
+    public const int Path = 21;
+    public const int PathListener = 22;
+    public const int Position = 23;
+    public const int PositionListener = 24;
+    public const int PowerupActivated = 25;
+    public const int PowerupActivatedListener = 26;
+    public const int PowerupDuration = 27;
+    public const int RandomPath = 28;
+    public const int Score = 29;
+    public const int ScoreListener = 30;
+    public const int Shoot = 31;
+    public const int ShootListener = 32;
+    public const int Spawner = 33;
+    public const int SpawnSet = 34;
+    public const int SpawnSetID = 35;
+    public const int Speed = 36;
+    public const int Tag = 37;
+    public const int Timer = 38;
+    public const int TimerState = 39;
+    public const int ToDestroy = 40;
+    public const int View = 41;
+    public const int ViewData = 42;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 43;
 
     public static readonly string[] componentNames = {
         "AutoMove",
         "Bullet",
+        "BulletOverride",
         "BulletPowerup",
         "Collision",
         "Cooldown",
@@ -101,6 +103,7 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AutoMoveComponent),
         typeof(BulletComponent),
+        typeof(BulletOverrideComponent),
         typeof(BulletPowerupComponent),
         typeof(CollisionComponent),
         typeof(CooldownComponent),
