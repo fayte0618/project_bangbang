@@ -33,6 +33,8 @@ public class ScenePositionUtility : MonoBehaviour
     {
         var positions = ids.Select(id => GetSpawnPosition(id)).ToArray();
 
+        if (positions.Length == 1) { return positions[0]; }
+
         return positions[Random.Range(0, positions.Length)];
     }
 

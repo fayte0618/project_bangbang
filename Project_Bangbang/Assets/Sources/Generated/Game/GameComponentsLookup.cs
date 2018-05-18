@@ -10,48 +10,53 @@ public static class GameComponentsLookup {
 
     public const int AutoMove = 0;
     public const int Bullet = 1;
-    public const int Collision = 2;
-    public const int Cooldown = 3;
-    public const int CurveTimer = 4;
-    public const int Damage = 5;
-    public const int Dead = 6;
-    public const int DeadListener = 7;
-    public const int Delta = 8;
-    public const int Direction = 9;
-    public const int GameToDestroyListener = 10;
-    public const int Gun = 11;
-    public const int GunSlots = 12;
-    public const int Health = 13;
-    public const int HealthListener = 14;
-    public const int ID = 15;
-    public const int Lifespan = 16;
-    public const int MoveFromTouch = 17;
-    public const int MovementPath = 18;
-    public const int Path = 19;
-    public const int PathListener = 20;
-    public const int Position = 21;
-    public const int PositionListener = 22;
-    public const int RandomPath = 23;
-    public const int Score = 24;
-    public const int ScoreListener = 25;
-    public const int Shoot = 26;
-    public const int ShootListener = 27;
-    public const int Spawner = 28;
-    public const int SpawnSet = 29;
-    public const int SpawnSetID = 30;
-    public const int Speed = 31;
-    public const int Tag = 32;
-    public const int Timer = 33;
-    public const int TimerState = 34;
-    public const int ToDestroy = 35;
-    public const int View = 36;
-    public const int ViewData = 37;
+    public const int BulletPowerup = 2;
+    public const int Collision = 3;
+    public const int Cooldown = 4;
+    public const int CurveTimer = 5;
+    public const int Damage = 6;
+    public const int Dead = 7;
+    public const int DeadListener = 8;
+    public const int Delta = 9;
+    public const int Direction = 10;
+    public const int GameToDestroyListener = 11;
+    public const int Gun = 12;
+    public const int GunSlots = 13;
+    public const int Health = 14;
+    public const int HealthListener = 15;
+    public const int ID = 16;
+    public const int Lifespan = 17;
+    public const int MoveFromTouch = 18;
+    public const int MovementPath = 19;
+    public const int Path = 20;
+    public const int PathListener = 21;
+    public const int Position = 22;
+    public const int PositionListener = 23;
+    public const int PowerupActivated = 24;
+    public const int PowerupActivatedListener = 25;
+    public const int PowerupDuration = 26;
+    public const int RandomPath = 27;
+    public const int Score = 28;
+    public const int ScoreListener = 29;
+    public const int Shoot = 30;
+    public const int ShootListener = 31;
+    public const int Spawner = 32;
+    public const int SpawnSet = 33;
+    public const int SpawnSetID = 34;
+    public const int Speed = 35;
+    public const int Tag = 36;
+    public const int Timer = 37;
+    public const int TimerState = 38;
+    public const int ToDestroy = 39;
+    public const int View = 40;
+    public const int ViewData = 41;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "AutoMove",
         "Bullet",
+        "BulletPowerup",
         "Collision",
         "Cooldown",
         "CurveTimer",
@@ -73,6 +78,9 @@ public static class GameComponentsLookup {
         "PathListener",
         "Position",
         "PositionListener",
+        "PowerupActivated",
+        "PowerupActivatedListener",
+        "PowerupDuration",
         "RandomPath",
         "Score",
         "ScoreListener",
@@ -93,6 +101,7 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AutoMoveComponent),
         typeof(BulletComponent),
+        typeof(BulletPowerupComponent),
         typeof(CollisionComponent),
         typeof(CooldownComponent),
         typeof(CurveTimerComponent),
@@ -114,6 +123,9 @@ public static class GameComponentsLookup {
         typeof(PathListenerComponent),
         typeof(PositionComponent),
         typeof(PositionListenerComponent),
+        typeof(PowerupActivatedComponent),
+        typeof(PowerupActivatedListenerComponent),
+        typeof(PowerupDurationComponent),
         typeof(RandomPathComponent),
         typeof(ScoreComponent),
         typeof(ScoreListenerComponent),

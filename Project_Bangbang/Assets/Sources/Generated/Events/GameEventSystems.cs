@@ -13,6 +13,7 @@ public sealed class GameEventSystems : Feature {
         Add(new HealthEventSystem(contexts)); // priority: 0
         Add(new PathEventSystem(contexts)); // priority: 0
         Add(new PositionEventSystem(contexts)); // priority: 0
+        Add(new PowerupActivatedEventSystem(contexts)); // priority: 0
         Add(new ScoreEventSystem(contexts)); // priority: 0
         Add(new ShootEventSystem(contexts)); // priority: 0
         Add(new GameToDestroyEventSystem(contexts)); // priority: 0
