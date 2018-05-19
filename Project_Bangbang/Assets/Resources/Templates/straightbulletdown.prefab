@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: straightbulletdown
-  _spawnPositionID: 
+  _spawnPositionID: []
   _parentID: 
-  speed: -10
+  speed: -5
   damage: 1
   lifespan: 2
   initPos: {x: 0, y: 0}

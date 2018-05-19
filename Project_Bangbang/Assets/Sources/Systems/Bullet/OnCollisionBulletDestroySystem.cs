@@ -39,7 +39,7 @@ public class OnCollisionBulletDestroySystem : ReactiveSystem<GameEntity>
 
             foreach (var bullet in bullets)
             {
-                bullet.ReplaceToDestroy(1);
+                bullet.ReplaceToDestroy(0);
             }
         }
     }

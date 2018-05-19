@@ -31,7 +31,7 @@ public class UnityEntityService : MonoBehaviour, IEntityService
 
         var objs = Resources.LoadAll<UnityEntityTemplate>(_baseFolder).Select(obj => GameObject.Instantiate(obj));
         var sceneObjs = SceneManager.GetActiveScene().GetRootGameObjects()
-                        .Select(obj => obj.GetComponentInChildren<UnityEntityTemplate>())
+                        .SelectMany(obj => obj.GetComponentsInChildren<UnityEntityTemplate>())
                         .Where(temp => temp != null).ToList();
 
         sceneObjs.AddRange(objs);

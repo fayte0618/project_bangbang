@@ -20,39 +20,41 @@ public static class GameComponentsLookup {
     public const int DeadListener = 9;
     public const int Delta = 10;
     public const int Direction = 11;
-    public const int GameToDestroyListener = 12;
-    public const int Gun = 13;
-    public const int GunSlots = 14;
-    public const int Health = 15;
-    public const int HealthListener = 16;
-    public const int ID = 17;
-    public const int Lifespan = 18;
-    public const int MoveFromTouch = 19;
-    public const int MovementPath = 20;
-    public const int Path = 21;
-    public const int PathListener = 22;
-    public const int Position = 23;
-    public const int PositionListener = 24;
-    public const int PowerupActivated = 25;
-    public const int PowerupActivatedListener = 26;
-    public const int PowerupDuration = 27;
-    public const int RandomPath = 28;
-    public const int Score = 29;
-    public const int ScoreListener = 30;
-    public const int Shoot = 31;
-    public const int ShootListener = 32;
-    public const int Spawner = 33;
-    public const int SpawnSet = 34;
-    public const int SpawnSetID = 35;
-    public const int Speed = 36;
-    public const int Tag = 37;
-    public const int Timer = 38;
-    public const int TimerState = 39;
-    public const int ToDestroy = 40;
-    public const int View = 41;
-    public const int ViewData = 42;
+    public const int GameState = 12;
+    public const int GameStateListener = 13;
+    public const int GameToDestroyListener = 14;
+    public const int Gun = 15;
+    public const int GunSlots = 16;
+    public const int Health = 17;
+    public const int HealthListener = 18;
+    public const int ID = 19;
+    public const int Lifespan = 20;
+    public const int MoveFromTouch = 21;
+    public const int MovementPath = 22;
+    public const int Path = 23;
+    public const int PathListener = 24;
+    public const int Position = 25;
+    public const int PositionListener = 26;
+    public const int PowerupActivated = 27;
+    public const int PowerupActivatedListener = 28;
+    public const int PowerupDuration = 29;
+    public const int RandomPath = 30;
+    public const int Score = 31;
+    public const int ScoreListener = 32;
+    public const int Shoot = 33;
+    public const int ShootListener = 34;
+    public const int Spawner = 35;
+    public const int SpawnSet = 36;
+    public const int SpawnSetID = 37;
+    public const int Speed = 38;
+    public const int Tag = 39;
+    public const int Timer = 40;
+    public const int TimerState = 41;
+    public const int ToDestroy = 42;
+    public const int View = 43;
+    public const int ViewData = 44;
 
-    public const int TotalComponents = 43;
+    public const int TotalComponents = 45;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -67,6 +69,8 @@ public static class GameComponentsLookup {
         "DeadListener",
         "Delta",
         "Direction",
+        "GameState",
+        "GameStateListener",
         "GameToDestroyListener",
         "Gun",
         "GunSlots",
@@ -113,6 +117,8 @@ public static class GameComponentsLookup {
         typeof(DeadListenerComponent),
         typeof(DeltaComponent),
         typeof(DirectionComponent),
+        typeof(GameStateComponent),
+        typeof(GameStateListenerComponent),
         typeof(GameToDestroyListenerComponent),
         typeof(GunComponent),
         typeof(GunSlotsComponent),

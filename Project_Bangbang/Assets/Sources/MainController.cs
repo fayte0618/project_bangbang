@@ -45,6 +45,7 @@ public class MainController : MonoBehaviour
             .Add(new DamageSystems(contexts))
             .Add(new ScoreSystems(contexts))
             .Add(new PowerupSystems(contexts))
+            .Add(new GameStateSystems(contexts))
 
             .Add(new GameEventSystems(contexts))
             .Add(new DestroySystem(contexts));

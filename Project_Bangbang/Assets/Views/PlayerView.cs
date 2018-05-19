@@ -26,7 +26,10 @@ public class PlayerView : UnityView, IPositionListener
 
     protected override void Initialize (Contexts contexts, GameEntity entity)
     {
-        
+        var spawnPos = ScenePositionUtility.Instance.GetSpawnPosition(entity.viewData.spawnPositionID);
+        var inputety = contexts.input.CreateEntity();
+        inputety.AddInputNewPosition(this.ID, spawnPos);
+        inputety.AddToDestroy(1);
     }
 
     protected override void RegisterListeners (GameEntity entity)
