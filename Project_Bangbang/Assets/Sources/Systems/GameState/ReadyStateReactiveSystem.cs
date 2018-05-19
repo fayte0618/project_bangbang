@@ -31,7 +31,6 @@ public class ReadyStateReactiveSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            // do stuff to the matched entities
             _meta.entityService.current.Get("player");
             _meta.entityService.current.Get("score");
             _meta.entityService.current.Get("gameover");

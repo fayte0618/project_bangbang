@@ -33,5 +33,13 @@ public static class Extensions
             view.transform.SetParent(ScenePositionUtility.Instance.GetParent(view.Entity.viewData.parentID), false);
         }
     }
+
+    public static void ForEach<T>(this HashSet<T> collection, Action<T> action)
+    {
+        foreach (var obj in collection)
+        {
+            action(obj);
+        }
+    }
 }
 

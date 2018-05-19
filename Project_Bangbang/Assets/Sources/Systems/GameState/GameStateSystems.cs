@@ -8,6 +8,7 @@ public class GameStateSystems : Feature
     public GameStateSystems (Contexts contexts) : base("Game State Systems")
     {
         //Add(system here);
+        Add(new ResetReactiveSystem(contexts));
         Add(new ReadyStateReactiveSystem(contexts));
         Add(new PlayReactiveSystem(contexts));
         Add(new GameOverReactiveSystem(contexts));

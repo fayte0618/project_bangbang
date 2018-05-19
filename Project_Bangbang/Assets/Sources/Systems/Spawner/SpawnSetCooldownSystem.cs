@@ -30,7 +30,10 @@ public class SpawnSetCooldownSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            _game.spawnerEntity.ReplaceCooldown(_game.spawner.set[_game.spawnSet.currID].cooldown);
+            if (_game.hasSpawner)
+            {
+                _game.spawnerEntity.ReplaceCooldown(_game.spawner.set[_game.spawnSet.currID].cooldown);
+            }
         }
     }
 }

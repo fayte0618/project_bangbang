@@ -36,7 +36,7 @@ public class PowerupActivateSystem : ReactiveSystem<GameEntity>
             var target = e.collision.current
                 .Where(col => (col.Value == CollisionType.ENTER || col.Value == CollisionType.STAY))
                 .Select(col => _game.GetEntityWithID(col.Key))
-                .FirstOrDefault(other => other.hasTag && other.tag.current == e.tag.current);
+                .FirstOrDefault(other => other.hasTag && other.tag.current == EntityType.PLAYER);
 
             if (target != null)
             {

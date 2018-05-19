@@ -61,6 +61,8 @@ public partial class Contexts : Entitas.IContexts {
 public partial class Contexts {
 
     public const string ID = "ID";
+    public const string Name = "Name";
+    public const string Tag = "Tag";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
@@ -68,6 +70,20 @@ public partial class Contexts {
             ID,
             game.GetGroup(GameMatcher.ID),
             (e, c) => ((IDComponent)c).number));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, string>(
+            Name,
+            game.GetGroup(GameMatcher.Name),
+            (e, c) => ((NameComponent)c).current));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, EntityType>(
+            Tag,
+            game.GetGroup(GameMatcher.Tag),
+            (e, c) => ((TagComponent)c).current));
+        input.AddEntityIndex(new Entitas.EntityIndex<InputEntity, EntityType>(
+            Tag,
+            input.GetGroup(InputMatcher.Tag),
+            (e, c) => ((TagComponent)c).current));
     }
 }
 
@@ -75,6 +91,18 @@ public static class ContextsExtensions {
 
     public static GameEntity GetEntityWithID(this GameContext context, int number) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ID)).GetEntity(number);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithName(this GameContext context, string current) {
+        return ((Entitas.EntityIndex<GameEntity, string>)context.GetEntityIndex(Contexts.Name)).GetEntities(current);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithTag(this GameContext context, EntityType current) {
+        return ((Entitas.EntityIndex<GameEntity, EntityType>)context.GetEntityIndex(Contexts.Tag)).GetEntities(current);
+    }
+
+    public static System.Collections.Generic.HashSet<InputEntity> GetEntitiesWithTag(this InputContext context, EntityType current) {
+        return ((Entitas.EntityIndex<InputEntity, EntityType>)context.GetEntityIndex(Contexts.Tag)).GetEntities(current);
     }
 }
 //------------------------------------------------------------------------------

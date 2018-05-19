@@ -20,7 +20,8 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
         if (entity is GameEntity)
         {
             var gameety = (GameEntity)entity;
-            gameety.AddViewData(_spawnPositionID, _parentID);
+            gameety.ReplaceName(_entityName);
+            gameety.ReplaceViewData(_spawnPositionID, _parentID);
             InitializeView(gameety, Contexts.sharedInstance);
         }
         return entity;
@@ -43,7 +44,7 @@ public abstract class UnityEntityTemplate : MonoBehaviour, IEntityTemplate
                 current[i] = currView.Name;
             }
 
-            entity.AddView(current);
+            entity.ReplaceView(current);
         }
         else
         {

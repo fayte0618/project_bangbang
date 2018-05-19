@@ -11,7 +11,7 @@ public class BulletPowerupTemplate : UnityEntityTemplate
     [SerializeField]
     float _duration;
     [SerializeField]
-    EntityType _compatibleEntity;
+    EntityType _tag;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
@@ -19,7 +19,7 @@ public class BulletPowerupTemplate : UnityEntityTemplate
 
         gameety.AddBulletPowerup(_bulletEntityID, _gunSlots, -1);
         gameety.AddPowerupDuration(_duration);
-        gameety.AddTag(_compatibleEntity);
+        gameety.AddTag(_tag);
         gameety.AddCollision(new System.Collections.Generic.Dictionary<int, CollisionType>());
 
         return gameety;

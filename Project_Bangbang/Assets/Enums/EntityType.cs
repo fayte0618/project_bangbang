@@ -3,6 +3,8 @@ public enum EntityType
 {
     NONE,
     PLAYER,
-    ENEMY
+    ENEMY,
+    BULLET,
+    POWERUP
 }
 

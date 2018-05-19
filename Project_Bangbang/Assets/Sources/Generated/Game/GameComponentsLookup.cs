@@ -31,30 +31,31 @@ public static class GameComponentsLookup {
     public const int Lifespan = 20;
     public const int MoveFromTouch = 21;
     public const int MovementPath = 22;
-    public const int Path = 23;
-    public const int PathListener = 24;
-    public const int Position = 25;
-    public const int PositionListener = 26;
-    public const int PowerupActivated = 27;
-    public const int PowerupActivatedListener = 28;
-    public const int PowerupDuration = 29;
-    public const int RandomPath = 30;
-    public const int Score = 31;
-    public const int ScoreListener = 32;
-    public const int Shoot = 33;
-    public const int ShootListener = 34;
-    public const int Spawner = 35;
-    public const int SpawnSet = 36;
-    public const int SpawnSetID = 37;
-    public const int Speed = 38;
-    public const int Tag = 39;
-    public const int Timer = 40;
-    public const int TimerState = 41;
-    public const int ToDestroy = 42;
-    public const int View = 43;
-    public const int ViewData = 44;
+    public const int Name = 23;
+    public const int Path = 24;
+    public const int PathListener = 25;
+    public const int Position = 26;
+    public const int PositionListener = 27;
+    public const int PowerupActivated = 28;
+    public const int PowerupActivatedListener = 29;
+    public const int PowerupDuration = 30;
+    public const int RandomPath = 31;
+    public const int Score = 32;
+    public const int ScoreListener = 33;
+    public const int Shoot = 34;
+    public const int ShootListener = 35;
+    public const int Spawner = 36;
+    public const int SpawnSet = 37;
+    public const int SpawnSetID = 38;
+    public const int Speed = 39;
+    public const int Tag = 40;
+    public const int Timer = 41;
+    public const int TimerState = 42;
+    public const int ToDestroy = 43;
+    public const int View = 44;
+    public const int ViewData = 45;
 
-    public const int TotalComponents = 45;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "AutoMove",
@@ -80,6 +81,7 @@ public static class GameComponentsLookup {
         "Lifespan",
         "MoveFromTouch",
         "MovementPath",
+        "Name",
         "Path",
         "PathListener",
         "Position",
@@ -128,6 +130,7 @@ public static class GameComponentsLookup {
         typeof(LifespanComponent),
         typeof(MoveFromTouchComponent),
         typeof(MovementPathComponent),
+        typeof(NameComponent),
         typeof(PathComponent),
         typeof(PathListenerComponent),
         typeof(PositionComponent),

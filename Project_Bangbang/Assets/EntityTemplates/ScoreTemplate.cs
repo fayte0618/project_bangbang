@@ -9,13 +9,8 @@ public class ScoreTemplate : UnityEntityTemplate
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
-        if (contexts.game.hasScore == false)
-        {
-            var gameety = contexts.game.CreateEntity();
-            gameety.AddScore(0);
-            return gameety;
-        }
-        return null;
+        contexts.game.ReplaceScore(0);
+        return contexts.game.scoreEntity;
     }
 
 }

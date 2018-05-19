@@ -14,10 +14,8 @@ public class GameOverView : UnityView, IGameStateListener
 
     protected override void Initialize (Contexts contexts, GameEntity entity)
     {
-        if (entity.hasViewData && entity.viewData.parentID != "")
-        {
-            this.transform.SetParent(ScenePositionUtility.Instance.GetParent(entity.viewData.parentID), false);
-        }
+        this.SetParent();
+        panel.gameObject.SetActive(false);
     }
 
     protected override void RegisterListeners (GameEntity entity)
@@ -32,6 +30,7 @@ public class GameOverView : UnityView, IGameStateListener
 
     public void Reset ()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        //hacky
+        this.contexts.game.ReplaceGameState(GameState.RESET);
     }
 }

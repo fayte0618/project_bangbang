@@ -130,7 +130,7 @@ MonoBehaviour:
   _bulletEntityID: curvedbullet
   _gunSlots: 1
   _duration: 5
-  _compatibleEntity: 1
+  _tag: 4
 --- !u!212 &212219481256535900
 SpriteRenderer:
   m_ObjectHideFlags: 1

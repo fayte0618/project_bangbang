@@ -5,9 +5,9 @@ using Entitas;
 using Entitas.CodeGeneration.Attributes;
 
 //[Entitas.CodeGenerator.SingleEntity]
-[Game, Input]
-public sealed class TagComponent : IComponent
+[Game]
+public sealed class NameComponent : IComponent
 {
     [EntityIndex]
-    public EntityType current;
+    public string current;
 }

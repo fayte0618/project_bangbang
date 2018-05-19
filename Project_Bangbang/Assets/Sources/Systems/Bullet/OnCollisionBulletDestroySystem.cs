@@ -33,7 +33,7 @@ public class OnCollisionBulletDestroySystem : ReactiveSystem<GameEntity>
                             .Where(other => other.hasToDestroy == false && other.hasBullet)
                             .Where(other =>
                             {
-                                if (other.hasTag && e.hasTag) { return other.tag.current != e.tag.current; }
+                                if (other.hasTag && e.hasTag) { return (other.tag.current != e.tag.current && other.tag.current != EntityType.POWERUP); }
                                 else { return true; }
                             });
 

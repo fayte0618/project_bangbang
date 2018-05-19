@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityName: straightbullet
-  _spawnPositionID: 
-  _parentID: 
+  _spawnPositionID: []
+  _parentID: pbullet
   speed: 10
   damage: 1
   lifespan: 2
