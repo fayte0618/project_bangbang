@@ -57,7 +57,7 @@ MonoBehaviour:
   _parentID: 
   _bulletEntityID: straightbulletdown
   _fireRate: 1
-  _initPos: {x: 0, y: 0}
+  _initPos: {x: -10, y: 0}
 --- !u!114 &114386629088035586
 MonoBehaviour:
   m_ObjectHideFlags: 1

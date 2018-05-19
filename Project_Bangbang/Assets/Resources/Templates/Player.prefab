@@ -280,9 +280,8 @@ MonoBehaviour:
   - player
   _parentID: 
   _speed: 50
-  health: 3
-  gunEntity:
-  - gun
+  health: 1
+  gunEntity: []
   tag: 1
 --- !u!114 &114362827162908510
 MonoBehaviour:
