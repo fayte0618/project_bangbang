@@ -13,6 +13,8 @@ public class PlayerShipTemplate : UnityEntityTemplate
     [SerializeField]
     private string[] gunEntity;
     [SerializeField]
+    private string[] bulletType;
+    [SerializeField]
     private EntityType tag;
 
     protected override IEntity InitializeEntity (Contexts contexts)
@@ -28,6 +30,7 @@ public class PlayerShipTemplate : UnityEntityTemplate
             IEntity entity;
             contexts.meta.entityService.current.Get(gunEntity[i], out entity);
             var gun = (GameEntity)entity;
+            if (bulletType.Length >= i + 1) { gun.ReplaceBullet(bulletType[i]); }
             slots.Add(i, gun.iD.number);
 
             gun.AddTag(tag);

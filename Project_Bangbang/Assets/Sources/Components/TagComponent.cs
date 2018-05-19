@@ -5,7 +5,7 @@ using Entitas;
 using Entitas.CodeGeneration.Attributes;
 
 //[Entitas.CodeGenerator.SingleEntity]
-[Game, Input]
+[Game, Input, Event(true)]
 public sealed class TagComponent : IComponent
 {
     [EntityIndex]

@@ -9,6 +9,8 @@
 public sealed class InputEventSystems : Feature {
 
     public InputEventSystems(Contexts contexts) {
+        Add(new GameTagEventSystem(contexts)); // priority: 0
+        Add(new InputTagEventSystem(contexts)); // priority: 0
         Add(new GameToDestroyEventSystem(contexts)); // priority: 0
         Add(new InputToDestroyEventSystem(contexts)); // priority: 0
     }

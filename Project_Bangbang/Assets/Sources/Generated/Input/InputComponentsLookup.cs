@@ -11,18 +11,20 @@ public static class InputComponentsLookup {
     public const int CreateEntity = 0;
     public const int InputCollision = 1;
     public const int InputNewPosition = 2;
-    public const int InputToDestroyListener = 3;
-    public const int InputTotalDamage = 4;
-    public const int InputTouchData = 5;
-    public const int Tag = 6;
-    public const int ToDestroy = 7;
+    public const int InputTagListener = 3;
+    public const int InputToDestroyListener = 4;
+    public const int InputTotalDamage = 5;
+    public const int InputTouchData = 6;
+    public const int Tag = 7;
+    public const int ToDestroy = 8;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "CreateEntity",
         "InputCollision",
         "InputNewPosition",
+        "InputTagListener",
         "InputToDestroyListener",
         "InputTotalDamage",
         "InputTouchData",
@@ -34,6 +36,7 @@ public static class InputComponentsLookup {
         typeof(CreateEntityComponent),
         typeof(InputCollisionComponent),
         typeof(InputNewPositionComponent),
+        typeof(InputTagListenerComponent),
         typeof(InputToDestroyListenerComponent),
         typeof(InputTotalDamageComponent),
         typeof(InputTouchDataComponent),

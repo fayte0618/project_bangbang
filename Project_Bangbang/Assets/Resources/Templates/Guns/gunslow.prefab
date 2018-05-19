@@ -56,7 +56,7 @@ MonoBehaviour:
   _spawnPositionID: []
   _parentID: 
   _bulletEntityID: bulletstraightdownslow
-  _fireRate: 2
+  _fireRate: 1
   _initPos: {x: -10, y: 0}
 --- !u!114 &114386629088035586
 MonoBehaviour:

@@ -454,7 +454,7 @@ MonoBehaviour:
   gunEntity:
   - gunslow
   bulletType:
-  - bulletstraightdownslow
+  - bulletstraightdownfast
   numPoints:
     min: 1
     max: 4
