@@ -451,6 +451,7 @@ MonoBehaviour:
   _health: 100
   _initPos: {x: -10, y: 0}
   _tag: 2
+  _damage: 1
   gunEntity:
   - gunhalffast
   - gunhalffast
