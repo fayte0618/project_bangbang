@@ -16,5 +16,22 @@ public static class Extensions
             input.AddInputCollision(self.ID, otherEntity.ID, state);
         }
     }
+
+    public static void SetSpawnPosition (this UnityView view)
+    {
+        if (view.Entity.hasViewData && view.Entity.viewData.spawnPositionID.Length > 0)
+        {
+            var inputety = view.Contexts.input.CreateEntity();
+            inputety.AddInputNewPosition(view.ID, ScenePositionUtility.Instance.GetSpawnPosition(view.Entity.viewData.spawnPositionID));
+        }
+    }
+
+    public static void SetParent (this UnityView view)
+    {
+        if (view.Entity.hasViewData && view.Entity.viewData.parentID != "")
+        {
+            view.transform.SetParent(ScenePositionUtility.Instance.GetParent(view.Entity.viewData.parentID), false);
+        }
+    }
 }
 

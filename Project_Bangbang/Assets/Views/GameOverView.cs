@@ -32,6 +32,6 @@ public class GameOverView : UnityView, IGameStateListener
 
     public void Reset ()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }

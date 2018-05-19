@@ -14,6 +14,7 @@ public abstract class UnityView : MonoBehaviour, IView, IGameToDestroyListener
     public Contexts Contexts { get { return contexts; } }
 
     public int ID { get { return entity.iD.number; } }
+    public GameEntity Entity { get { return entity; } }
 
     public string Name { get { return this.gameObject.name; } }
 

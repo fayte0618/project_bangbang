@@ -14,6 +14,7 @@ public class BulletView : UnityView, IPositionListener
     protected override void Initialize (Contexts contexts, GameEntity entity)
     {
         //do nothing
+        this.SetParent();
     }
 
     protected override void RegisterListeners (GameEntity entity)
