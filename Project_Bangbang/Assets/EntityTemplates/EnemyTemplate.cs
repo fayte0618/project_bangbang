@@ -12,6 +12,8 @@ public class EnemyTemplate : UnityEntityTemplate
     [SerializeField]
     private EntityType _tag;
     [SerializeField]
+    private int _damage = 1;
+    [SerializeField]
     private string[] gunEntity;
     [SerializeField]
     private string[] bulletType;
@@ -36,6 +38,7 @@ public class EnemyTemplate : UnityEntityTemplate
         gameety.AddPosition(_initPos);
         gameety.AddTag(_tag);
         gameety.AddCurveTimer(0f);
+        gameety.AddDamage(_damage);
         //gameety.AddSpeed(_speed);
         //gameety.AddTimerState(TimerState.PLAY);
         //gameety.AddMovementPath(_movementPathX, _movementPathY, _type);

@@ -32,7 +32,6 @@ public class PlayReactiveSystem : ReactiveSystem<InputEntity>
     {
         foreach (var e in entities)
         {
-            Debug.Log($"play state: {e.inputTouchData.direction}");
             // do stuff to the matched entities
             _meta.entityService.current.Get("spawner");
             _game.ReplaceGameState(GameState.PLAY);
