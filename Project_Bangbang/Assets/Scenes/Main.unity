@@ -1556,6 +1556,11 @@ Prefab:
       propertyPath: _parentID
       value: pscore
       objectReference: {fileID: 0}
+    - target: {fileID: 114140408168550144, guid: 65024edf081a79b4296e5d073aa01d86,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65024edf081a79b4296e5d073aa01d86, type: 2}
   m_IsPrefabParent: 0

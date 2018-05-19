@@ -279,7 +279,7 @@ MonoBehaviour:
   _spawnPositionID:
   - player
   _parentID: 
-  _speed: 50
+  _speed: 60
   health: 1
   gunEntity:
   - gunfast

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnityInputService : MonoBehaviour, IInputService
 {
@@ -36,7 +37,7 @@ public class UnityInputService : MonoBehaviour, IInputService
 #endif
 
 #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
-        if (Input.touchCount > 0 && _initTouch == false)
+        if (Input.touchCount > 0 && _initTouch == false && EventSystem.current.IsPointerOverGameObject(0) == false)
         {
             _initPos = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
             _prevPos = _initPos;
@@ -64,7 +65,7 @@ public class UnityInputService : MonoBehaviour, IInputService
         }
 #endif
 #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && _initTouch && EventSystem.current.IsPointerOverGameObject(0) == false)
         {
             _prevPos = _currPos;
             _currPos = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);

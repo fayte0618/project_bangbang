@@ -25,13 +25,14 @@ public class PlayReactiveSystem : ReactiveSystem<InputEntity>
         // check for required components
         return _game.hasGameState &&
             _game.gameState.active == GameState.READY &&
-            entity.inputTouchData.delta != Vector2.zero;
+            Mathf.Approximately(entity.inputTouchData.direction.x, 0f) == false;
     }
 
     protected override void Execute (List<InputEntity> entities)
     {
         foreach (var e in entities)
         {
+            Debug.Log($"play state: {e.inputTouchData.direction}");
             // do stuff to the matched entities
             _meta.entityService.current.Get("spawner");
             _game.ReplaceGameState(GameState.PLAY);
