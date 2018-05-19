@@ -23,7 +23,8 @@ public class PlayReactiveSystem : ReactiveSystem<InputEntity>
     protected override bool Filter (InputEntity entity)
     {
         // check for required components
-        return _game.gameState.active == GameState.READY &&
+        return _game.hasGameState &&
+            _game.gameState.active == GameState.READY &&
             entity.inputTouchData.delta != Vector2.zero;
     }
 

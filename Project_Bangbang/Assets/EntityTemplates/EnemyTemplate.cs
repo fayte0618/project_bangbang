@@ -14,6 +14,8 @@ public class EnemyTemplate : UnityEntityTemplate
     [SerializeField]
     private string[] gunEntity;
     [SerializeField]
+    private string[] bulletType;
+    [SerializeField]
     private Range numPoints;
     [SerializeField]
     private Range durPerPoint;
@@ -45,6 +47,8 @@ public class EnemyTemplate : UnityEntityTemplate
             IEntity entity;
             contexts.meta.entityService.current.Get(gunEntity[i], out entity);
             var gun = (GameEntity)entity;
+            if (bulletType.Length >= i + 1) { gun.ReplaceBullet(bulletType[i]); }
+
             slots.Add(i, gun.iD.number);
 
             gun.AddTag(_tag);

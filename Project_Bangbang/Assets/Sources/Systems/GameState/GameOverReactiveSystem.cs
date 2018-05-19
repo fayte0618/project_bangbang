@@ -21,7 +21,9 @@ public class GameOverReactiveSystem : ReactiveSystem<GameEntity>
     protected override bool Filter (GameEntity entity)
     {
         // check for required components
-        return _game.gameState.active == GameState.PLAY &&
+        return 
+            _game.hasGameState &&
+            _game.gameState.active == GameState.PLAY &&
             entity.hasHealth && entity.health.current <= 0 &&
             entity.hasTag && entity.tag.current == EntityType.PLAYER;
     }

@@ -622,7 +622,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _createOnStart: 1
   entities:
-  - gamestate
+  - enemygoon
+  - enemygoonfaster
+  - enemygoonstronger
+  - enemygoonfasterstronger
 --- !u!4 &590147186
 Transform:
   m_ObjectHideFlags: 0
@@ -1168,6 +1171,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bounds: {fileID: 698230348}
   _patrolBounds: {fileID: 1608569661}
+--- !u!1001 &875236614
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795586335015264, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349938659854144, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+      propertyPath: m_Name
+      value: TestSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 246d8ecb7ba8d1249bc8a94814c0654a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &916922982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,75 +1503,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 763774724}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1207355264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1207355266}
-  - component: {fileID: 1207355265}
-  m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1207355265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1207355264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca7cea18d97d2847a2aac3be691f8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _entityName: spawner
-  _spawnPositionID: []
-  _parentID: 
-  _set:
-  - ids:
-    - enemy
-    - enemy
-    - enemy
-    cooldown: 2
-  - ids:
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    cooldown: 2
-  - ids:
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    - enemy
-    cooldown: 2
-  _repeat: 1
---- !u!4 &1207355266
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1207355264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219813122
 GameObject:

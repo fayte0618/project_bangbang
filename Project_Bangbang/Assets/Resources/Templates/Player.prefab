@@ -281,7 +281,8 @@ MonoBehaviour:
   _parentID: 
   _speed: 50
   health: 1
-  gunEntity: []
+  gunEntity:
+  - gun
   tag: 1
 --- !u!114 &114362827162908510
 MonoBehaviour:
