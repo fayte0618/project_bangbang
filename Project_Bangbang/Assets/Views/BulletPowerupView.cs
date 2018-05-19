@@ -23,10 +23,7 @@ public class BulletPowerupView : UnityView, IPowerupActivatedListener
         _spriteRenderer.enabled = true;
         _detector.enabled = true;
 
-        if (entity.hasViewData && entity.viewData.spawnPositionID.Length > 0)
-        {
-            this.transform.position = ScenePositionUtility.Instance.GetSpawnPosition(entity.viewData.spawnPositionID);
-        }
+        this.transform.position = this.contexts.meta.screenService.current.RandomPoint();
     }
 
     protected override void RegisterListeners (GameEntity entity)

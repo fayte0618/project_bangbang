@@ -7,11 +7,13 @@ public class DamageCollisionSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _game;
     private readonly InputContext _input;
+    private readonly MetaContext _meta;
 
     public DamageCollisionSystem (Contexts contexts) : base(contexts.game)
     {
         _game = contexts.game;
         _input = contexts.input;
+        _meta = contexts.meta;
     }
 
     protected override ICollector<GameEntity> GetTrigger (IContext<GameEntity> context)
@@ -37,8 +39,12 @@ public class DamageCollisionSystem : ReactiveSystem<GameEntity>
                             .Select(col => _game.GetEntityWithID(col.Key))
                             .Where(other =>
                             {
-                                if (e.hasTag && other.hasTag) { return other.hasDamage && e.tag.current != other.tag.current; }
-                                else { return other.hasDamage; }
+                                var inbounds = other.hasPosition && _meta.screenService.current.IsWithinView(other.position.current);
+                                var valid = false;
+                                if (e.hasTag && other.hasTag) { valid = other.hasDamage && e.tag.current != other.tag.current; }
+                                else { valid = other.hasDamage; }
+
+                                return valid && inbounds;
                             })
                             .Select(other => other.damage.value)
                             .Aggregate(0, (total, damage) => total + damage);

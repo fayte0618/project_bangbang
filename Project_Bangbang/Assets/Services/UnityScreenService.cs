@@ -15,6 +15,11 @@ public class UnityScreenService : MonoBehaviour, IScreenService
         return _bounds.bounds.ClosestPoint(worldPos);
     }
 
+    public bool IsWithinView (Vector2 position)
+    {
+        return _bounds.bounds.Contains(new Vector3(position.x, position.y, _bounds.transform.position.z));
+    }
+
     /// <summary>
     /// random world point
     /// </summary>

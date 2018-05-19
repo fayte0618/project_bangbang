@@ -19,7 +19,7 @@ public class DeathSystem : ReactiveSystem<GameEntity>
     {
         // check for required components
         return entity.hasHealth &&
-            entity.health.current == 0 &&
+            entity.health.current <= 0 &&
             entity.isDead == false;
     }
 

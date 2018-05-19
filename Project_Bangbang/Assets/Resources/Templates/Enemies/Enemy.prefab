@@ -419,9 +419,10 @@ MonoBehaviour:
   _tag: 2
   gunEntity:
   - gunslow
+  bulletType: []
   numPoints:
-    min: 1
-    max: 4
+    min: 2
+    max: 5
   durPerPoint:
     min: 0
     max: 10

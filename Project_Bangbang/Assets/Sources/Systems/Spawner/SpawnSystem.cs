@@ -47,7 +47,9 @@ public class SpawnSystem : ReactiveSystem<GameEntity>
                 IEntity entity = null;
                 if (_meta.entityService.current.Get(id, out entity))
                 {
-                    ((GameEntity)entity).AddSpawnSetID(newID);
+                    var gameety = (GameEntity)entity;
+                    if (gameety.hasTag && gameety.tag.current == EntityType.POWERUP) { continue; }
+                    gameety.AddSpawnSetID(newID);
                 }
             }
         }

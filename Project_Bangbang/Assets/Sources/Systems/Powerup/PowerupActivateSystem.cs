@@ -42,6 +42,7 @@ public class PowerupActivateSystem : ReactiveSystem<GameEntity>
             {
                 e.AddPowerupActivated(target.iD.number, e.iD.number);
                 e.AddCooldown(e.powerupDuration.length);
+                e.RemoveLifespan();
             }
         }
     }

@@ -47,7 +47,7 @@ public class GunPowerupSystem : ReactiveSystem<GameEntity>
                 for (int i = 0; i < e.gunSlots.current.Count; i++)
                 {
                     var gun = _game.GetEntityWithID(e.gunSlots.current[i]);
-                    gun?.RemoveBulletOverride();
+                    if (gun != null && gun.hasBulletOverride) { gun.RemoveBulletOverride(); };
                 }
             }
         }

@@ -448,22 +448,22 @@ MonoBehaviour:
   - espawn8
   - espawn9
   _parentID: 
-  _health: 20
+  _health: 30
   _initPos: {x: -10, y: 0}
   _tag: 2
   gunEntity:
-  - gunslow
-  - gunslow
-  - gunslow
-  - gunslow
+  - gunhalffast
+  - gunhalffast
+  - gunhalffast
+  - gunhalffast
   bulletType:
   - bulletdiagonaluplslow
   - bulletdiagonaluprslow
   - bulletdiagonaldownlslow
   - bulletdiagonaldownrslow
   numPoints:
-    min: 1
-    max: 4
+    min: 2
+    max: 5
   durPerPoint:
     min: 2
     max: 10

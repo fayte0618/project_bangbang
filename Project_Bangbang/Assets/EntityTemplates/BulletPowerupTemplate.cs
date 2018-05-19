@@ -11,7 +11,13 @@ public class BulletPowerupTemplate : UnityEntityTemplate
     [SerializeField]
     float _duration;
     [SerializeField]
+    float _lifespan;
+    [SerializeField]
     EntityType _tag;
+    [SerializeField]
+    private Range numPoints;
+    [SerializeField]
+    private Range durPerPoint;
 
     protected override IEntity InitializeEntity (Contexts contexts)
     {
@@ -21,6 +27,8 @@ public class BulletPowerupTemplate : UnityEntityTemplate
         gameety.AddPowerupDuration(_duration);
         gameety.AddTag(_tag);
         gameety.AddCollision(new System.Collections.Generic.Dictionary<int, CollisionType>());
+        gameety.AddLifespan(_lifespan);
+        gameety.AddRandomPath(numPoints, false, durPerPoint);
 
         return gameety;
     }
